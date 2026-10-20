@@ -1,0 +1,25 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:totem_of_undying": 1,
+      "minecraft:end_crystal": 101,
+      "minecraft:bedrock": 5
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 7
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 184,
+      "minecraft:time_since_rest": 2446,
+      "minecraft:walk_one_cm": 2349,
+      "minecraft:total_world_time": 2933,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 8,
+      "minecraft:damage_taken": 209,
+      "minecraft:play_time": 2446,
+      "minecraft:jump": 7,
+      "minecraft:time_since_death": 2446
+    }
+  },
+  "DataVersion": 4671
+}

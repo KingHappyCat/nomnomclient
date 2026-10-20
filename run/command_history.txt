@@ -1,0 +1,23 @@
+/seed
+/kill
+/gamemode creative
+/give Player712 minecraft:totem_of_undying
+/summon
+/summon minecraft:zombie
+/time set night
+/summon minecraft:zombie
+/summon minecraft:zombiet
+/summon minecraft:zombiett
+/summon minecraft:zombie
+/summon minecraft:zombie 222
+/summon minecraft:zombie 232 67.00 159.65
+/summon minecraft:zombie 232 67.00 159.65 1
+/summon minecraft:zombie 232 67.00 159.65
+/summon minecraft:zombie 232 67.00 159.65t
+/summon minecraft:zombie 232 67.00 159.65
+/summon minecraft:zombie 0 ~ 0
+/summon minecraft:zombie 54 ~ -4
+/summon minecraft:zombie
+/summon minecraft:ravager
+/summon minecraft:warden
+/summon minecraft:zombie

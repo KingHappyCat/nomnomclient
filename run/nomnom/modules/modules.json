@@ -1,0 +1,44 @@
+{
+  "AutoCrystal": {
+    "AutoPlace": "true",
+    "AutoBreak": "true",
+    "PlaceRange": "6",
+    "BreakRange": "6",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Step": {
+    "Height": "2.0",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Notifications": {
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Velocity": {
+    "PushOutOfBlocks": "true",
+    "EntityPush": "true",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "ClickGui": {
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": 80
+  },
+  "Fullbright": {
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Heaven": {
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  }
+}
