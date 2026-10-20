@@ -22,6 +22,8 @@ public class ModuleManager extends GenericManager<Module> implements Jsonable {
     @Override
     public void initialize(Nomnom nomnom) {
         register(new AutoCrystal(nomnom));
+        register(new Speed(nomnom));
+        register(new NoRender(nomnom));
         register(new Step(nomnom));
         register(new Notifications(nomnom));
         register(new Velocity(nomnom));

@@ -28,7 +28,7 @@
   },
   "ClickGui": {
     "Enabled": "false",
-    "Drawn": "true",
+    "Drawn": "false",
     "Bind": 80
   },
   "Fullbright": {
