@@ -30,6 +30,14 @@ public class ModuleManager extends GenericManager<Module> implements Jsonable {
         register(new ClickGui(nomnom));
         register(new Fullbright(nomnom));
         register(new Heaven(nomnom));
+        register(new NoFall(nomnom));
+        register(new AutoTotem(nomnom));
+        register(new KillAura(nomnom));
+        register(new FastPlace(nomnom));
+        register(new AutoReconnect(nomnom));
+        register(new ESP(nomnom));
+        register(new Tracers(nomnom));
+        register(new Nametags(nomnom));
     }
 
     @Override
