@@ -8,27 +8,47 @@
     "Drawn": "true",
     "Bind": -1
   },
-  "Step": {
-    "Height": "2.0",
+  "Speed": {
+    "Speed": "1.5",
+    "Ground Check": "true",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "NoRender": {
+    "Fire": "true",
+    "Hurt Camera": "false",
+    "Boss Bar": "false",
+    "Weather": "false",
+    "Potion Particles": "false",
+    "Explosion Particles": "true",
+    "Vignette": "false",
+    "Totem Animation": "false",
     "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
+  "Step": {
+    "Height": "2.0",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
   "Notifications": {
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
   "Velocity": {
     "PushOutOfBlocks": "true",
     "EntityPush": "true",
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
   "ClickGui": {
     "Enabled": "false",
-    "Drawn": "false",
+    "Drawn": "true",
     "Bind": 80
   },
   "Fullbright": {
