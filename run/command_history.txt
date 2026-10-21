@@ -27,3 +27,7 @@
 /gamemode survival
 /gamemode creative
 /gamemode creative Player635
+/enchant Player635 minecraft:sharpness 5
+/enchant Player523 minecraft:sharpness 5
+/summon minecraft:warden
+/time set day

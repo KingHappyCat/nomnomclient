@@ -4,6 +4,7 @@
     "AutoBreak": "true",
     "PlaceRange": "6",
     "BreakRange": "6",
+    "MaxPlacementsPerTick": "3",
     "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
@@ -76,13 +77,13 @@
     "Bind": -1
   },
   "KillAura": {
-    "Range": "3.8",
+    "Range": "2.95",
     "Players": "true",
     "Hostiles": "true",
     "Passives": "false",
     "Rotate": "false",
     "Cooldown": "true",
-    "Enabled": "false",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },

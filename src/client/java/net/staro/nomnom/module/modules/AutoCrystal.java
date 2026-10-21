@@ -20,6 +20,8 @@ import net.staro.nomnom.api.event.listener.Listener;
 import net.staro.nomnom.events.tick.TickEvent;
 import net.staro.nomnom.module.Category;
 import net.staro.nomnom.module.NomnomModule;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.util.Locale;
 
@@ -30,6 +32,7 @@ public class AutoCrystal extends NomnomModule {
     private final Setting<Boolean> autoBreak = bool("AutoBreak", true);
     private final Setting<Integer> placeRange = integer("PlaceRange", 4, 1, 6);
     private final Setting<Integer> breakRange = integer("BreakRange", 5, 1, 6);
+    private final Setting<Integer> maxPlacementsPerTick = integer("MaxPlacementsPerTick", 3, 1, 8);
 
     private static final int RESTOCK_THRESHOLD = 10;
     private static final long STATS_INTERVAL_NS = 1_000_000_000L;
@@ -97,6 +100,19 @@ public class AutoCrystal extends NomnomModule {
             return;
         }
 
+        int availableCrystals = offhandCrystal
+                ? mc.player.getOffHandStack().getCount()
+                : mc.player.getInventory().getStack(crystalSlot).getCount();
+
+        int placementLimit = Math.min(
+                maxPlacementsPerTick.getValue(),
+                availableCrystals
+        );
+
+        if (placementLimit <= 0) {
+            return;
+        }
+
         LivingEntity target = findTarget();
 
         if (target == null) {
@@ -106,10 +122,17 @@ public class AutoCrystal extends NomnomModule {
         int range = placeRange.getValue();
         BlockPos targetPos = target.getBlockPos();
 
+        int placementsThisTick = 0;
+        List<Box> attemptedBoxes = new ArrayList<>();
+
         for (BlockPos base : BlockPos.iterate(
                 targetPos.add(-range, -2, -range),
-                targetPos.add(range, 2, range)
-        )) {
+                targetPos.add(range, 2, range))) {
+
+            if (placementsThisTick >= placementLimit) {
+                break;
+            }
+
             if (mc.player.squaredDistanceTo(Vec3d.ofCenter(base))
                     > range * range) {
                 continue;
@@ -122,10 +145,9 @@ public class AutoCrystal extends NomnomModule {
 
             BlockPos above = base.up();
 
-            boolean oneBlockHigh =
-                    mc.world.getBlockState(above).isAir();
-
-            if (!oneBlockHigh) {
+            // Require space for the crystal.
+            if (!mc.world.getBlockState(above).isAir()
+                    || !mc.world.getBlockState(above.up()).isAir()) {
                 continue;
             }
 
@@ -142,6 +164,20 @@ public class AutoCrystal extends NomnomModule {
                 continue;
             }
 
+            // Avoid requesting placements with overlapping crystal spaces.
+            boolean overlapsAttempt = false;
+
+            for (Box attemptedBox : attemptedBoxes) {
+                if (attemptedBox.intersects(crystalBox)) {
+                    overlapsAttempt = true;
+                    break;
+                }
+            }
+
+            if (overlapsAttempt) {
+                continue;
+            }
+
             BlockHitResult hit = new BlockHitResult(
                     Vec3d.ofCenter(base).add(0, 0.5, 0),
                     Direction.UP,
@@ -149,16 +185,13 @@ public class AutoCrystal extends NomnomModule {
                     false
             );
 
-            // Count the placement attempt immediately before sending it.
+            // Count attempts, not server-confirmed successful placements.
             placeAttemptsWindow++;
 
             if (offhandCrystal) {
                 mc.interactionManager.interactBlock(
-                        mc.player,
-                        Hand.OFF_HAND,
-                        hit
+                        mc.player, Hand.OFF_HAND, hit
                 );
-
                 mc.player.swingHand(Hand.OFF_HAND);
             } else {
                 int previousSlot =
@@ -170,9 +203,7 @@ public class AutoCrystal extends NomnomModule {
                     );
 
                     mc.interactionManager.interactBlock(
-                            mc.player,
-                            Hand.MAIN_HAND,
-                            hit
+                            mc.player, Hand.MAIN_HAND, hit
                     );
 
                     mc.player.swingHand(Hand.MAIN_HAND);
@@ -183,7 +214,8 @@ public class AutoCrystal extends NomnomModule {
                 }
             }
 
-            return;
+            attemptedBoxes.add(crystalBox);
+            placementsThisTick++;
         }
     }
 
