@@ -101,19 +101,19 @@
   "ESP": {
     "Players": "true",
     "Hostiles": "true",
-    "Passives": "false",
+    "Passives": "true",
     "Fill": "true",
     "Range": "128",
-    "Enabled": "false",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
   "Tracers": {
     "Players": "true",
-    "Hostiles": "false",
-    "Passives": "false",
+    "Hostiles": "true",
+    "Passives": "true",
     "Range": "128",
-    "Enabled": "false",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
