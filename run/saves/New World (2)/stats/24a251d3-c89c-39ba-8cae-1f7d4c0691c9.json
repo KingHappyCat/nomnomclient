@@ -1,0 +1,32 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:end_crystal": 29,
+      "minecraft:bedrock": 3,
+      "minecraft:obsidian": 13
+    },
+    "minecraft:picked_up": {
+      "minecraft:snowball": 8
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 2535,
+      "minecraft:walk_one_cm": 4659,
+      "minecraft:leave_game": 2,
+      "minecraft:mob_kills": 3,
+      "minecraft:play_time": 2535,
+      "minecraft:damage_dealt": 3,
+      "minecraft:jump": 7,
+      "minecraft:time_since_death": 2535,
+      "minecraft:sprint_one_cm": 343,
+      "minecraft:total_world_time": 2597,
+      "minecraft:fly_one_cm": 18345,
+      "minecraft:crouch_one_cm": 60,
+      "minecraft:sneak_time": 92
+    },
+    "minecraft:killed": {
+      "minecraft:sheep": 1,
+      "minecraft:wolf": 2
+    }
+  },
+  "DataVersion": 4671
+}

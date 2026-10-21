@@ -106,9 +106,17 @@ public class ClickGuiScreen extends Screen {
         return false;
     }
 
+    /** True while this screen is being removed, so the module doesn't call setScreen again. */
+    private boolean closing;
+
+    public boolean isClosing() {
+        return closing;
+    }
+
     @Override
     public void removed() {
         // Closing the screen also disables the ClickGUI module, matching the existing lifecycle.
+        closing = true;
         if (owner.isEnabled()) owner.disable();
     }
 

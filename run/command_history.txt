@@ -31,3 +31,4 @@
 /enchant Player523 minecraft:sharpness 5
 /summon minecraft:warden
 /time set day
+/summon minecraft:warden

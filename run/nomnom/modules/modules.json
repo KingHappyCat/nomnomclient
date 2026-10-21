@@ -11,9 +11,9 @@
   },
   "Speed": {
     "Mode": "STRAFE",
-    "Speed": "5.0",
+    "Speed": "2.83",
     "Ground Check": "true",
-    "Enabled": "false",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
@@ -83,13 +83,13 @@
     "Passives": "false",
     "Rotate": "false",
     "Cooldown": "true",
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
   "FastPlace": {
     "Delay": "0",
-    "Enabled": "false",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
@@ -102,18 +102,18 @@
   "ESP": {
     "Players": "true",
     "Hostiles": "true",
-    "Passives": "true",
+    "Passives": "false",
     "Fill": "true",
-    "Range": "128",
+    "Range": "256",
     "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
   "Tracers": {
     "Players": "true",
-    "Hostiles": "true",
-    "Passives": "true",
-    "Range": "128",
+    "Hostiles": "false",
+    "Passives": "false",
+    "Range": "256",
     "Enabled": "true",
     "Drawn": "true",
     "Bind": -1

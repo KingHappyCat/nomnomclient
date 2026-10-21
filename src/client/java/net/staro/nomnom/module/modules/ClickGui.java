@@ -19,7 +19,9 @@ public class ClickGui extends NomnomModule {
 
     @Override
     public void onDisable() {
-        if (mc.currentScreen instanceof ClickGuiScreen) {
+        // If the screen is already closing (ESC / Right Shift), calling setScreen again
+        // re-enters MinecraftClient.setScreen and Fabric's screen hook gets a null screen.
+        if (mc.currentScreen instanceof ClickGuiScreen gui && !gui.isClosing()) {
             mc.setScreen(null);
         }
     }
