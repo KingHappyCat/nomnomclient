@@ -9,9 +9,10 @@
     "Bind": -1
   },
   "Speed": {
+    "Mode": "STRAFE",
     "Speed": "1.5",
     "Ground Check": "true",
-    "Enabled": "false",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
@@ -30,7 +31,7 @@
   },
   "Step": {
     "Height": "2.0",
-    "Enabled": "false",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
@@ -42,7 +43,7 @@
   "Velocity": {
     "PushOutOfBlocks": "true",
     "EntityPush": "true",
-    "Enabled": "false",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
@@ -58,6 +59,72 @@
   },
   "Heaven": {
     "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "NoFall": {
+    "Distance": "1.0",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "AutoTotem": {
+    "Health": "20.0",
+    "Delay": "1",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "KillAura": {
+    "Range": "3.8",
+    "Players": "true",
+    "Hostiles": "true",
+    "Passives": "false",
+    "Rotate": "true",
+    "Cooldown": "true",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "FastPlace": {
+    "Delay": "0",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "AutoReconnect": {
+    "Delay": "5",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "ESP": {
+    "Players": "true",
+    "Hostiles": "true",
+    "Passives": "false",
+    "Fill": "true",
+    "Range": "128",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Tracers": {
+    "Players": "true",
+    "Hostiles": "false",
+    "Passives": "false",
+    "Range": "128",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Nametags": {
+    "Players": "true",
+    "Hostiles": "false",
+    "Passives": "false",
+    "Health": "true",
+    "Distance": "true",
+    "Range": "128",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   }
