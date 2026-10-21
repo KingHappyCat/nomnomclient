@@ -11,7 +11,8 @@
     "client.MixinKeyboard",
     "entity.MixinClientPlayerEntity",
     "network.MixinClientPlayNetworkHandler",
-    "render.MixinCamera"
+    "render.MixinCamera",
+    "client.IMinecraftClient"
   ],
   "injectors": {
     "defaultRequire": 1

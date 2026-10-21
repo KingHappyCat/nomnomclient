@@ -11,7 +11,9 @@ import net.staro.nomnom.manager.managers.*;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.staro.nomnom.events.tick.TickEvent;
 import net.staro.nomnom.api.event.bus.EventBus;
-
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.minecraft.util.Identifier;
+import net.staro.nomnom.events.render.Render2DEvent;
 
 @Slf4j
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
@@ -48,6 +50,12 @@ public class NomnomClient implements Client {
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (Nomnom.EVENT_BUS != null) {
 				Nomnom.EVENT_BUS.post(TickEvent.INSTANCE);
+			}
+		});
+
+		HudElementRegistry.addLast(Identifier.of("nomnom", "render2d"), (context, tickCounter) -> {
+			if (Nomnom.EVENT_BUS != null) {
+				Nomnom.EVENT_BUS.post(new Render2DEvent(context, tickCounter.getTickProgress(false)));
 			}
 		});
 

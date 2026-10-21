@@ -49,7 +49,11 @@ public class ModuleManager extends GenericManager<Module> implements Jsonable {
 
     @Override
     public void fromJson(JsonElement element) {
-        getModules().forEach(module -> module.fromJson(element.getAsJsonObject().get(module.getName())));
+        JsonObject object = element.getAsJsonObject();
+        getModules().forEach(module -> {
+            JsonElement entry = object.get(module.getName());
+            if (entry != null) module.fromJson(entry);
+        });
     }
 
     public List<Module> getModules() {
