@@ -5,8 +5,6 @@ I made this readme with the help of ai, since i dont really know how to make a r
 
 Nomnom Client is a **client-side Fabric mod for Minecraft 1.21.11**, written in Java. It uses a modular system for combat, movement, rendering, and client-quality-of-life features, with configurable module settings, keybinds, chat commands, friends, and JSON-based configuration profiles.
 
-> **Status:** Work in progress. The repository does not currently list a published release, and individual modules may need further testing and fixes. Build and test the current source before using it in a game.
-
 ## Features
 
 ### Combat

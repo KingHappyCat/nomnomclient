@@ -21,3 +21,9 @@
 /summon minecraft:ravager
 /summon minecraft:warden
 /summon minecraft:zombie
+/clear
+/summon minecraft:warden
+/enchant Player635 minecraft:sharpness 5
+/gamemode survival
+/gamemode creative
+/gamemode creative Player635

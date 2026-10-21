@@ -4,15 +4,15 @@
     "AutoBreak": "true",
     "PlaceRange": "6",
     "BreakRange": "6",
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
   "Speed": {
     "Mode": "STRAFE",
-    "Speed": "1.5",
+    "Speed": "5.0",
     "Ground Check": "true",
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
@@ -80,7 +80,7 @@
     "Players": "true",
     "Hostiles": "true",
     "Passives": "false",
-    "Rotate": "true",
+    "Rotate": "false",
     "Cooldown": "true",
     "Enabled": "false",
     "Drawn": "true",
