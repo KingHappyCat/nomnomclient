@@ -1,6 +1,6 @@
 package net.staro.nomnom.module.modules;
 
-import net.minecraft.client.gui.screen.ConnectScreen;
+import net.minecraft.client.gui.screen.multiplayer.ConnectScreen;
 import net.minecraft.client.gui.screen.DisconnectedScreen;
 import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen;
