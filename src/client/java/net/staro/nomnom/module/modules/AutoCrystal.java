@@ -380,32 +380,4 @@ public class AutoCrystal extends NomnomModule {
         }
         return mobs.getValue();
     }
-
-    private void reportStatsIfDue() {
-        long now = System.nanoTime();
-        long elapsed = now - statsWindowStart;
-
-        if (elapsed < STATS_INTERVAL_NS) {
-            return;
-        }
-
-        double seconds = elapsed / 1_000_000_000.0;
-
-        double placeRate = placeAttemptsWindow / seconds;
-        double breakRate = breakAttemptsWindow / seconds;
-
-        mc.player.sendMessage(
-                Text.literal(String.format(
-                        Locale.ROOT,
-                        "[AutoCrystal] Place: %.1f attempts/s | Break: %.1f attempts/s",
-                        placeRate,
-                        breakRate
-                )),
-                false
-        );
-
-        placeAttemptsWindow = 0;
-        breakAttemptsWindow = 0;
-        statsWindowStart = now;
-    }
 }
