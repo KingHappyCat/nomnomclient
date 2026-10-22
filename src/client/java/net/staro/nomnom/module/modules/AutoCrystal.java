@@ -120,8 +120,6 @@ public class AutoCrystal extends NomnomModule {
         if (autoPlace.getValue()) {
             placeCrystals();
         }
-
-        reportStatsIfDue();
     }
 
     private void processPops() {
