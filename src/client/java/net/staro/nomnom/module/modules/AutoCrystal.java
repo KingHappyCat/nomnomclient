@@ -1,11 +1,13 @@
 package net.staro.nomnom.module.modules;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Items;
 import net.minecraft.network.packet.c2s.play.UpdateSelectedSlotC2SPacket;
+import net.minecraft.network.packet.s2c.play.EntityStatusS2CPacket;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
@@ -17,11 +19,14 @@ import net.minecraft.util.math.Vec3d;
 import net.staro.nomnom.Nomnom;
 import net.staro.nomnom.api.Setting;
 import net.staro.nomnom.api.event.listener.Listener;
+import net.staro.nomnom.events.PacketEvent;
 import net.staro.nomnom.events.tick.TickEvent;
 import net.staro.nomnom.module.Category;
 import net.staro.nomnom.module.NomnomModule;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import java.util.Locale;
 
@@ -33,6 +38,23 @@ public class AutoCrystal extends NomnomModule {
     private final Setting<Integer> placeRange = integer("PlaceRange", 4, 1, 6);
     private final Setting<Integer> breakRange = integer("BreakRange", 5, 1, 6);
     private final Setting<Integer> maxPlacementsPerTick = integer("MaxPlacementsPerTick", 3, 1, 8);
+    private final Setting<Boolean> players = bool("Players", true);
+    private final Setting<Boolean> mobs = bool("Mobs", true);
+
+    // Double pop timing: after the target pops a totem the server ignores any damage that
+    // doesn't beat their last hit for ~10 ticks, so breaking early is wasted. We hold breaking
+    // (but keep placing, so crystals are armed) and release right as that window ends.
+    private final Setting<Boolean> doublePop = bool("DoublePop", true);
+    private final Setting<Integer> popDelay = integer("PopDelay", 10, 0, 20);
+    private final Setting<Boolean> pingComp = bool("PingComp", true);
+    private final Setting<Boolean> debug = bool("Debug", false);
+
+    private static final double POP_TRACK_RANGE = 12.0;
+    private static final int TOTEM_POP_STATUS = 35;
+
+    private final Queue<EntityStatusS2CPacket> pendingStatus = new ConcurrentLinkedQueue<>();
+    private long tickCounter;
+    private long holdUntilTick = -1;
 
     private static final int RESTOCK_THRESHOLD = 10;
     private static final long STATS_INTERVAL_NS = 1_000_000_000L;
@@ -51,6 +73,22 @@ public class AutoCrystal extends NomnomModule {
         );
     }
 
+    @Override
+    public void onDisable() {
+        pendingStatus.clear();
+        holdUntilTick = -1;
+    }
+
+    @Listener
+    public void onPacket(PacketEvent.Receive event) {
+        // Network thread: only queue the packet, it is resolved on the client tick.
+        if (doublePop.getValue()
+                && event.getPacket() instanceof EntityStatusS2CPacket packet
+                && packet.getStatus() == TOTEM_POP_STATUS) {
+            pendingStatus.add(packet);
+        }
+    }
+
     @Listener
     public void onTick(TickEvent event) {
         if (mc.player == null
@@ -60,9 +98,22 @@ public class AutoCrystal extends NomnomModule {
             return;
         }
 
+        tickCounter++;
+        processPops();
+
+        boolean holding = false;
+        if (holdUntilTick >= 0) {
+            if (doublePop.getValue() && tickCounter < holdUntilTick) {
+                holding = true;
+            } else {
+                holdUntilTick = -1;
+                debugMessage("Hold over, breaking crystals");
+            }
+        }
+
         restockCrystals();
 
-        if (autoBreak.getValue()) {
+        if (autoBreak.getValue() && !holding) {
             breakCrystals();
         }
 
@@ -71,6 +122,40 @@ public class AutoCrystal extends NomnomModule {
         }
 
         reportStatsIfDue();
+    }
+
+    private void processPops() {
+        EntityStatusS2CPacket packet;
+        while ((packet = pendingStatus.poll()) != null) {
+            Entity entity = packet.getEntity(mc.world);
+            if (entity == null
+                    || entity == mc.player
+                    || mc.player.squaredDistanceTo(entity) > POP_TRACK_RANGE * POP_TRACK_RANGE) {
+                continue;
+            }
+
+            // The pop packet reaches us about half a round trip late and our attack needs the
+            // other half to get back, so the wait shrinks by the ping (floored, to stay safe).
+            int wait = popDelay.getValue();
+            if (pingComp.getValue()) {
+                wait -= pingTicks();
+            }
+            wait = Math.max(0, wait);
+
+            holdUntilTick = tickCounter + wait;
+            debugMessage("Pop on " + entity.getName().getString() + ", holding breaks for " + wait + " ticks");
+        }
+    }
+
+    private int pingTicks() {
+        var entry = mc.getNetworkHandler().getPlayerListEntry(mc.player.getUuid());
+        return entry == null ? 0 : entry.getLatency() / 50;
+    }
+
+    private void debugMessage(String message) {
+        if (debug.getValue() && mc.player != null) {
+            mc.player.sendMessage(Text.literal("[AutoCrystal] " + message), false);
+        }
     }
 
     private void breakCrystals() {
@@ -281,12 +366,19 @@ public class AutoCrystal extends NomnomModule {
                 mc.player.getBoundingBox().expand(range),
                 entity -> entity != mc.player
                         && entity.isAlive()
-                        && !(entity instanceof PlayerEntity)
+                        && isValidTarget(entity)
                         && mc.player.squaredDistanceTo(entity) <= range * range
         ).stream().min((a, b) -> Double.compare(
                 mc.player.squaredDistanceTo(a),
                 mc.player.squaredDistanceTo(b)
         )).orElse(null);
+    }
+
+    private boolean isValidTarget(LivingEntity entity) {
+        if (entity instanceof PlayerEntity player) {
+            return players.getValue() && !nomnom.friendManager().isFriend(player);
+        }
+        return mobs.getValue();
     }
 
     private void reportStatsIfDue() {

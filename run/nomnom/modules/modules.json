@@ -23,7 +23,7 @@
     "Boss Bar": "false",
     "Weather": "false",
     "Potion Particles": "false",
-    "Explosion Particles": "true",
+    "Explosion Particles": "false",
     "Vignette": "false",
     "Totem Animation": "false",
     "Enabled": "true",
@@ -89,7 +89,7 @@
   },
   "FastPlace": {
     "Delay": "0",
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
@@ -114,7 +114,7 @@
     "Hostiles": "false",
     "Passives": "false",
     "Range": "256",
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
