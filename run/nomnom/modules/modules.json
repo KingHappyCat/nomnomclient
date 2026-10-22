@@ -1,0 +1,138 @@
+{
+  "AutoCrystal": {
+    "AutoPlace": "true",
+    "AutoBreak": "true",
+    "PlaceRange": "6",
+    "BreakRange": "6",
+    "MaxPlacementsPerTick": "3",
+    "Players": "true",
+    "Mobs": "true",
+    "DoublePop": "true",
+    "PopDelay": "10",
+    "PingComp": "true",
+    "Debug": "false",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Speed": {
+    "Mode": "STRAFE",
+    "Speed": "2.83",
+    "Ground Check": "true",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "NoRender": {
+    "Fire": "true",
+    "Hurt Camera": "false",
+    "Boss Bar": "false",
+    "Weather": "false",
+    "Potion Particles": "false",
+    "Explosion Particles": "true",
+    "Vignette": "false",
+    "Totem Animation": "false",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Step": {
+    "Height": "2.0",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Notifications": {
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Velocity": {
+    "PushOutOfBlocks": "true",
+    "EntityPush": "true",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "ClickGui": {
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": 80
+  },
+  "Fullbright": {
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Heaven": {
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "NoFall": {
+    "Distance": "1.0",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "AutoTotem": {
+    "Health": "20.0",
+    "Delay": "1",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "KillAura": {
+    "Range": "6.0",
+    "Players": "true",
+    "Hostiles": "true",
+    "Passives": "false",
+    "Rotate": "false",
+    "Cooldown": "true",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "FastPlace": {
+    "Delay": "0",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "AutoReconnect": {
+    "Delay": "5",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "ESP": {
+    "Players": "true",
+    "Hostiles": "true",
+    "Passives": "false",
+    "Fill": "true",
+    "Range": "256",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Tracers": {
+    "Players": "true",
+    "Hostiles": "false",
+    "Passives": "false",
+    "Range": "256",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Nametags": {
+    "Players": "true",
+    "Hostiles": "false",
+    "Passives": "false",
+    "Health": "true",
+    "Distance": "true",
+    "Range": "128",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  }
+}

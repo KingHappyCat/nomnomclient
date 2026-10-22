@@ -1,0 +1,29 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:zombie": 3
+    },
+    "minecraft:dropped": {
+      "minecraft:obsidian": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:obsidian": 1
+    },
+    "minecraft:used": {
+      "minecraft:end_crystal": 10,
+      "minecraft:obsidian": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 5532,
+      "minecraft:walk_one_cm": 1489,
+      "minecraft:total_world_time": 5557,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 395,
+      "minecraft:mob_kills": 3,
+      "minecraft:play_time": 5532,
+      "minecraft:time_since_death": 1327,
+      "minecraft:drop": 1
+    }
+  },
+  "DataVersion": 4671
+}
