@@ -2237,3 +2237,74 @@ net.minecraft.client.realms.exception.RealmsServiceException: Realms authenticat
 [10:59:32] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
 [10:59:32] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
 [10:59:32] [Render thread/INFO] (net.minecraft.client.gl.DynamicUniformStorage) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
+[11:05:58] [Render thread/DEBUG] (FabricLoader/Mixin) Mixing ParticleUtilsMixin from fabric-particles-v1.mixins.json into net.minecraft.particle.ParticleUtil
+[11:05:58] [Render thread/DEBUG] (com.mojang.blaze3d.systems.RenderSystem) Growing IndexBuffer: Old limit 0, new limit 144.
+[11:05:58] [Render thread/INFO] (net.minecraft.client.gl.DynamicUniformStorage) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
+[11:06:02] [Render thread/INFO] (net.minecraft.client.gl.DynamicUniformStorage) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
+[11:06:07] [Server thread/DEBUG] (FabricLoader/Mixin) Mixing ServerPlayNetworkHandlerInteractEntityHandlerMixin from fabric-events-interaction-v0.mixins.json into net.minecraft.server.network.ServerPlayNetworkHandler$1
+[11:06:07] [Server thread/DEBUG] (FabricLoader/Mixin) fabric-events-interaction-v0.mixins.json:ServerPlayNetworkHandlerInteractEntityHandlerMixin from mod fabric-events-interaction-v0->@Inject::onPlayerInteractEntity(Lnet/minecraft/util/Hand;Lnet/minecraft/util/math/Vec3d;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V does use it's CallbackInfo
+[11:06:07] [Server thread/DEBUG] (FabricLoader/Mixin) fabric-events-interaction-v0.mixins.json:ServerPlayNetworkHandlerInteractEntityHandlerMixin from mod fabric-events-interaction-v0->@Inject::onPlayerInteractEntity(Lnet/minecraft/util/Hand;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V does use it's CallbackInfo
+[11:06:07] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Player722 has made the advancement [Monster Hunter]
+[11:06:07] [Render thread/INFO] (net.minecraft.client.gui.hud.ChatHud) [System] [CHAT] Player722 has made the advancement [Monster Hunter]
+[11:06:08] [Render thread/INFO] (net.minecraft.advancement.AdvancementManager) Loaded 99 advancements
+[11:06:18] [Server thread/INFO] (net.minecraft.server.MinecraftServer) [Player722: Set own game mode to Survival Mode]
+[11:06:18] [Render thread/INFO] (net.minecraft.client.gui.hud.ChatHud) [System] [CHAT] Set own game mode to Survival Mode
+[11:06:23] [Render thread/INFO] (net.minecraft.advancement.AdvancementManager) Loaded 101 advancements
+[11:06:36] [Render thread/INFO] (net.minecraft.advancement.AdvancementManager) Loaded 101 advancements
+[11:06:40] [Server thread/INFO] (net.minecraft.server.integrated.IntegratedServer) Saving and pausing game...
+[11:06:40] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[11:06:40] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[11:06:40] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[11:07:56] [Server thread/INFO] (net.minecraft.server.integrated.IntegratedServer) Saving and pausing game...
+[11:07:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[11:07:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[11:07:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[11:08:00] [Render thread/DEBUG] (FabricLoader/Mixin) Mixing ClientTooltipComponentMixin from fabric-rendering-v1.mixins.json into net.minecraft.client.gui.tooltip.TooltipComponent
+[11:08:00] [Render thread/DEBUG] (FabricLoader/Mixin) Mixing ClientTooltipComponentMixin from fabric-resource-loader-v1.client.mixins.json into net.minecraft.client.gui.tooltip.TooltipComponent
+[11:08:00] [Render thread/DEBUG] (FabricLoader/Mixin) fabric-rendering-v1.mixins.json:ClientTooltipComponentMixin from mod fabric-rendering-v1->@Inject::convertCustomTooltipData(Lnet/minecraft/item/tooltip/TooltipData;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[11:08:00] [Render thread/DEBUG] (FabricLoader/Mixin) fabric-resource-loader-v1.client.mixins.json:ClientTooltipComponentMixin from mod fabric-resource-loader-v1->@Inject::onCreate(Lnet/minecraft/item/tooltip/TooltipData;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[11:08:15] [Worker-Main-18/DEBUG] (FabricLoader/Mixin) Mixing NoiseChunkMixin from fabric-biome-api-v1.mixins.json into net.minecraft.world.gen.chunk.ChunkNoiseSampler
+[11:08:15] [Worker-Main-18/DEBUG] (FabricLoader/Mixin) fabric-biome-api-v1.mixins.json:NoiseChunkMixin from mod fabric-biome-api-v1->@Inject::init(ILnet/minecraft/world/gen/noise/NoiseConfig;IILnet/minecraft/world/gen/chunk/GenerationShapeConfig;Lnet/minecraft/world/gen/densityfunction/DensityFunctionTypes$Beardifying;Lnet/minecraft/world/gen/chunk/ChunkGeneratorSettings;Lnet/minecraft/world/gen/chunk/AquiferSampler$FluidLevelSampler;Lnet/minecraft/world/gen/chunk/Blender;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V doesn't use it's CallbackInfo
+[11:08:15] [Worker-Main-18/DEBUG] (FabricLoader/Mixin) fabric-biome-api-v1.mixins.json:NoiseChunkMixin from mod fabric-biome-api-v1->@Inject::init(ILnet/minecraft/world/gen/noise/NoiseConfig;IILnet/minecraft/world/gen/chunk/GenerationShapeConfig;Lnet/minecraft/world/gen/densityfunction/DensityFunctionTypes$Beardifying;Lnet/minecraft/world/gen/chunk/ChunkGeneratorSettings;Lnet/minecraft/world/gen/chunk/AquiferSampler$FluidLevelSampler;Lnet/minecraft/world/gen/chunk/Blender;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V has 0 override(s) in child classes
+[11:08:15] [Worker-Main-18/DEBUG] (FabricLoader/Mixin) fabric-biome-api-v1.mixins.json:NoiseChunkMixin from mod fabric-biome-api-v1->@Inject::init(ILnet/minecraft/world/gen/noise/NoiseConfig;IILnet/minecraft/world/gen/chunk/GenerationShapeConfig;Lnet/minecraft/world/gen/densityfunction/DensityFunctionTypes$Beardifying;Lnet/minecraft/world/gen/chunk/ChunkGeneratorSettings;Lnet/minecraft/world/gen/chunk/AquiferSampler$FluidLevelSampler;Lnet/minecraft/world/gen/chunk/Blender;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V won't be passed a CallbackInfo as a result
+[11:08:15] [Worker-Main-18/DEBUG] (FabricLoader/Mixin) fabric-biome-api-v1.mixins.json:NoiseChunkMixin from mod fabric-biome-api-v1->@Inject::createMultiNoiseSampler(Lnet/minecraft/world/gen/noise/NoiseRouter;Ljava/util/List;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[11:08:16] [Render thread/DEBUG] (FabricLoader/Mixin) Mixing RenderStateMixin from fabric-rendering-v1.mixins.json into net.minecraft.client.render.block.MovingBlockRenderState
+[11:08:16] [Render thread/DEBUG] (FabricLoader/Mixin) Mixing MovingBlockRenderStateMixin from fabric-block-view-api-v2.client.mixins.json into net.minecraft.client.render.block.MovingBlockRenderState
+[11:08:16] [Render thread/DEBUG] (io.netty.util.internal.ThreadLocalRandom) -Dio.netty.initialSeedUniquifier: 0x4e1e409fd0c83681
+[11:08:20] [Server thread/INFO] (net.minecraft.server.MinecraftServer) [Player722: Set own game mode to Creative Mode]
+[11:08:20] [Render thread/INFO] (net.minecraft.client.gui.hud.ChatHud) [System] [CHAT] Set own game mode to Creative Mode
+[11:08:33] [Server thread/INFO] (net.minecraft.server.MinecraftServer) [Player722: Set own game mode to Survival Mode]
+[11:08:33] [Render thread/INFO] (net.minecraft.client.gui.hud.ChatHud) [System] [CHAT] Set own game mode to Survival Mode
+[11:08:37] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Player722 was blown up by Creeper
+[11:08:55] [Server thread/INFO] (net.minecraft.server.integrated.IntegratedServer) Saving and pausing game...
+[11:08:55] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[11:08:55] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[11:08:55] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[11:08:56] [Server thread/INFO] (net.minecraft.server.network.ServerPlayNetworkHandler) Player722 lost connection: Disconnected
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Player722 left the game
+[11:08:56] [Server thread/INFO] (net.minecraft.server.network.ServerCommonNetworkHandler) Stopping singleplayer server as player logged out
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Stopping server
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving players
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving worlds
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) ThreadedAnvilChunkStorage (New World (3)): All chunks are saved
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[11:08:56] [Server thread/INFO] (net.minecraft.server.MinecraftServer) ThreadedAnvilChunkStorage: All dimensions are saved
+[11:08:58] [Render thread/DEBUG] (net.fabricmc.fabric.impl.resource.pack.ModPackResourcesUtil) [Fabric] Starting internal pack sorting with: [fabric-convention-tags-v2, fabric-gametest-api-v1]
+[11:08:58] [Render thread/DEBUG] (net.fabricmc.fabric.impl.resource.pack.ModPackResourcesUtil) [Fabric] Removed all internal packs, result: []
+[11:08:58] [Render thread/DEBUG] (net.fabricmc.fabric.impl.resource.pack.ModPackResourcesUtil) [Fabric] Final sorting result: []
+[11:08:58] [Render thread/DEBUG] (net.fabricmc.fabric.impl.resource.pack.ModPackResourcesUtil) [Fabric] Starting internal pack sorting with: [vanilla, fabric-convention-tags-v2, fabric-gametest-api-v1]
+[11:08:58] [Render thread/DEBUG] (net.fabricmc.fabric.impl.resource.pack.ModPackResourcesUtil) [Fabric] Removed all internal packs, result: [vanilla]
+[11:08:58] [Render thread/DEBUG] (net.fabricmc.fabric.impl.resource.pack.ModPackResourcesUtil) [Fabric] cur @ vanilla, auto-enabled fabric-convention-tags-v2, currently enabled: [vanilla, fabric-convention-tags-v2]
+[11:08:58] [Render thread/DEBUG] (net.fabricmc.fabric.impl.resource.pack.ModPackResourcesUtil) [Fabric] cur @ vanilla, auto-enabled fabric-gametest-api-v1, currently enabled: [vanilla, fabric-convention-tags-v2, fabric-gametest-api-v1]
+[11:08:58] [Render thread/DEBUG] (net.fabricmc.fabric.impl.resource.pack.ModPackResourcesUtil) [Fabric] Final sorting result: [vanilla, fabric-convention-tags-v2, fabric-gametest-api-v1]
+[11:08:59] [Render thread/INFO] (net.minecraft.recipe.ServerRecipeManager) Loaded 1470 recipes
+[11:08:59] [Render thread/INFO] (net.minecraft.advancement.AdvancementManager) Loaded 1584 advancements
+[11:08:59] [Render thread/INFO] (net.fabricmc.fabric.impl.biome.modification.BiomeModificationImpl) Applied 0 biome modifications to 0 of 65 new biomes in 313.8 μs
+[11:08:59] [Server thread/INFO] (net.minecraft.server.integrated.IntegratedServer) Starting integrated minecraft server version 1.21.11
+[11:08:59] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Generating keypair
+[11:08:59] [Server thread/INFO] (net.minecraft.world.chunk.LoggingChunkLoadProgress) Loading 0 persistent chunks...
+[11:09:07] [Render thread/INFO] (net.minecraft.client.MinecraftClient) Stopping!

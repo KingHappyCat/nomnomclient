@@ -8,7 +8,7 @@ import net.staro.nomnom.module.NomnomModule;
 
 public class Heaven extends NomnomModule {
     public Heaven(Nomnom nomnom) {
-        super(nomnom, "Heaven", Category.RENDER, "Shows you what heave is like.");
+        super(nomnom, "Heaven", Category.RENDER, "Shows you what heaven is like.");
     }
 
     @SafeListener

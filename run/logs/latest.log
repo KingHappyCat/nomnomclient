@@ -225,3 +225,49 @@ net.minecraft.client.realms.exception.RealmsServiceException: Realms authenticat
 [10:59:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
 [10:59:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
 [10:59:32] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
+[11:05:58] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
+[11:06:02] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
+[11:06:07] [Server thread/INFO] (Minecraft) Player722 has made the advancement [Monster Hunter]
+[11:06:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Player722 has made the advancement [Monster Hunter]
+[11:06:08] [Render thread/INFO] (Minecraft) Loaded 99 advancements
+[11:06:18] [Server thread/INFO] (Minecraft) [Player722: Set own game mode to Survival Mode]
+[11:06:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Set own game mode to Survival Mode
+[11:06:23] [Render thread/INFO] (Minecraft) Loaded 101 advancements
+[11:06:36] [Render thread/INFO] (Minecraft) Loaded 101 advancements
+[11:06:40] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[11:06:40] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[11:06:40] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[11:06:40] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[11:07:56] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[11:07:56] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[11:07:56] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[11:07:56] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[11:08:20] [Server thread/INFO] (Minecraft) [Player722: Set own game mode to Creative Mode]
+[11:08:20] [Render thread/INFO] (Minecraft) [System] [CHAT] Set own game mode to Creative Mode
+[11:08:33] [Server thread/INFO] (Minecraft) [Player722: Set own game mode to Survival Mode]
+[11:08:33] [Render thread/INFO] (Minecraft) [System] [CHAT] Set own game mode to Survival Mode
+[11:08:37] [Server thread/INFO] (Minecraft) Player722 was blown up by Creeper
+[11:08:55] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[11:08:55] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[11:08:55] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[11:08:55] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[11:08:56] [Server thread/INFO] (Minecraft) Player722 lost connection: Disconnected
+[11:08:56] [Server thread/INFO] (Minecraft) Player722 left the game
+[11:08:56] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[11:08:56] [Server thread/INFO] (Minecraft) Stopping server
+[11:08:56] [Server thread/INFO] (Minecraft) Saving players
+[11:08:56] [Server thread/INFO] (Minecraft) Saving worlds
+[11:08:56] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[11:08:56] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[11:08:56] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[11:08:56] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World (3)): All chunks are saved
+[11:08:56] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[11:08:56] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[11:08:56] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[11:08:59] [Render thread/INFO] (Minecraft) Loaded 1470 recipes
+[11:08:59] [Render thread/INFO] (Minecraft) Loaded 1584 advancements
+[11:08:59] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 65 new biomes in 313.8 μs
+[11:08:59] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.21.11
+[11:08:59] [Server thread/INFO] (Minecraft) Generating keypair
+[11:08:59] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
+[11:09:07] [Render thread/INFO] (Minecraft) Stopping!
