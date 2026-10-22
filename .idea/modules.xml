@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nomnomclient.iml" filepath="$PROJECT_DIR$/.idea/modules/nomnomclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nomnomclient.client.iml" filepath="$PROJECT_DIR$/.idea/modules/nomnomclient.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nomnomclient.main.iml" filepath="$PROJECT_DIR$/.idea/modules/nomnomclient.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nomnomclient.test.iml" filepath="$PROJECT_DIR$/.idea/modules/nomnomclient.test.iml" />
