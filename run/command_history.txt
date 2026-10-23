@@ -35,3 +35,7 @@
 /enchant Player290 minecraft:sharpness 5
 /summon minecraft:zoglin
 /enchant Player94 minecraft:sharpness
+/summon minecraft:zoglin
+/summon minecraft:endermite
+/summon minecraft:warden
+/summon minecraft:endermite

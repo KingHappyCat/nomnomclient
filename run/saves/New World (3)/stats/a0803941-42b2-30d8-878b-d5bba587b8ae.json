@@ -1,0 +1,37 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:spruce_log": 2,
+      "minecraft:chicken": 1,
+      "minecraft:rotten_flesh": 20
+    },
+    "minecraft:used": {
+      "minecraft:end_crystal": 425,
+      "minecraft:obsidian": 147
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 2,
+      "minecraft:warden": 2,
+      "minecraft:creeper": 1,
+      "minecraft:chicken": 1,
+      "minecraft:wolf": 2,
+      "minecraft:zoglin": 12,
+      "minecraft:endermite": 17,
+      "minecraft:bat": 2
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 5267,
+      "minecraft:walk_one_cm": 882,
+      "minecraft:total_world_time": 6321,
+      "minecraft:fly_one_cm": 37317,
+      "minecraft:mob_kills": 39,
+      "minecraft:crouch_one_cm": 14,
+      "minecraft:play_time": 5267,
+      "minecraft:sneak_time": 162,
+      "minecraft:damage_dealt": 947,
+      "minecraft:jump": 3,
+      "minecraft:time_since_death": 5267
+    }
+  },
+  "DataVersion": 4671
+}
