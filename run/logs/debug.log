@@ -2409,3 +2409,17 @@ com.mojang.brigadier.exceptions.CommandSyntaxException: Unknown or incomplete co
 [14:28:26] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
 [14:28:26] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
 [14:28:26] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[15:14:37] [Server thread/INFO] (net.minecraft.server.network.ServerPlayNetworkHandler) Player900 lost connection: Disconnected
+[15:14:37] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Player900 left the game
+[15:14:37] [Server thread/INFO] (net.minecraft.server.network.ServerCommonNetworkHandler) Stopping singleplayer server as player logged out
+[15:14:37] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Stopping server
+[15:14:37] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving players
+[15:14:37] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving worlds
+[15:14:37] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[15:14:38] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[15:14:38] [Server thread/INFO] (net.minecraft.server.MinecraftServer) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[15:14:38] [Server thread/INFO] (net.minecraft.server.MinecraftServer) ThreadedAnvilChunkStorage (New World (3)): All chunks are saved
+[15:14:38] [Server thread/INFO] (net.minecraft.server.MinecraftServer) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[15:14:38] [Server thread/INFO] (net.minecraft.server.MinecraftServer) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[15:14:38] [Server thread/INFO] (net.minecraft.server.MinecraftServer) ThreadedAnvilChunkStorage: All dimensions are saved
+[15:14:39] [Render thread/INFO] (net.minecraft.client.MinecraftClient) Stopping!

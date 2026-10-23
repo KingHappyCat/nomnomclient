@@ -312,3 +312,17 @@ net.minecraft.client.realms.exception.RealmsServiceException: Realms authenticat
 [14:28:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
 [14:28:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
 [14:28:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[15:14:37] [Server thread/INFO] (Minecraft) Player900 lost connection: Disconnected
+[15:14:37] [Server thread/INFO] (Minecraft) Player900 left the game
+[15:14:37] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[15:14:37] [Server thread/INFO] (Minecraft) Stopping server
+[15:14:37] [Server thread/INFO] (Minecraft) Saving players
+[15:14:37] [Server thread/INFO] (Minecraft) Saving worlds
+[15:14:37] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[15:14:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[15:14:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[15:14:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World (3)): All chunks are saved
+[15:14:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[15:14:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[15:14:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[15:14:39] [Render thread/INFO] (Minecraft) Stopping!
