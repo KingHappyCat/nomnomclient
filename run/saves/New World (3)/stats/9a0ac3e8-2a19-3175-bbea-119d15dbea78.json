@@ -1,0 +1,46 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 3580,
+      "minecraft:walk_one_cm": 6190,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 14,
+      "minecraft:walk_under_water_one_cm": 452,
+      "minecraft:damage_taken": 630,
+      "minecraft:damage_dealt": 1583,
+      "minecraft:play_time": 4796,
+      "minecraft:jump": 32,
+      "minecraft:time_since_death": 3539,
+      "minecraft:drop": 1,
+      "minecraft:sprint_one_cm": 3380,
+      "minecraft:total_world_time": 86169,
+      "minecraft:fly_one_cm": 10938,
+      "minecraft:walk_on_water_one_cm": 1779,
+      "minecraft:crouch_one_cm": 17,
+      "minecraft:sneak_time": 55,
+      "minecraft:deaths": 1
+    },
+    "minecraft:killed_by": {
+      "minecraft:warden": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:netherite_sword": 1,
+      "minecraft:rotten_flesh": 1
+    },
+    "minecraft:used": {
+      "minecraft:netherite_sword": 19,
+      "minecraft:end_crystal": 27,
+      "minecraft:obsidian": 7
+    },
+    "minecraft:killed": {
+      "minecraft:salmon": 10,
+      "minecraft:zombie": 2,
+      "minecraft:skeleton": 1,
+      "minecraft:warden": 1
+    },
+    "minecraft:dropped": {
+      "minecraft:netherite_sword": 1
+    }
+  },
+  "DataVersion": 4671
+}

@@ -185,7 +185,10 @@ public class AutoCrystal extends NomnomModule {
                 entity -> entity.isAlive()
                         && mc.player.squaredDistanceTo(entity) <= range * range
         )) {
-            double damage = crystalDamage(target, crystal.getPos());
+            double damage = crystalDamage(
+                    target,
+                    new Vec3d(crystal.getX(), crystal.getY(), crystal.getZ())
+            );
 
             if (damage >= bestDamage) {
                 best = crystal;

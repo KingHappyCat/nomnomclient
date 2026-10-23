@@ -34,3 +34,4 @@
 /summon minecraft:warden
 /enchant Player290 minecraft:sharpness 5
 /summon minecraft:zoglin
+/enchant Player94 minecraft:sharpness
