@@ -1,36 +1,24 @@
 package net.staro.nomnom.module.modules;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.decoration.EndCrystalEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.network.packet.c2s.play.UpdateSelectedSlotC2SPacket;
-import net.minecraft.network.packet.s2c.play.EntityEquipmentUpdateS2CPacket;
-import net.minecraft.network.packet.s2c.play.EntityStatusS2CPacket;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.RaycastContext;
 import net.staro.nomnom.Nomnom;
 import net.staro.nomnom.api.Setting;
 import net.staro.nomnom.api.event.listener.Listener;
@@ -38,13 +26,13 @@ import net.staro.nomnom.events.PacketEvent;
 import net.staro.nomnom.events.tick.TickEvent;
 import net.staro.nomnom.module.Category;
 import net.staro.nomnom.module.NomnomModule;
+import net.staro.nomnom.utility.CrystalDamage;
+import net.staro.nomnom.utility.PopTracker;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 @SuppressWarnings("unused")
 public class AutoCrystal extends NomnomModule {
@@ -95,41 +83,35 @@ public class AutoCrystal extends NomnomModule {
     // --- Double pop ---
     // After the target pops a totem the server ignores any damage that doesn't beat their last
     // hit for ~10 ticks, so breaking early is wasted. We hold breaking (but keep placing, so
-    // crystals are armed) and release right as that window ends.
+    // crystals are armed) and release right as that window ends. See PopTracker.
     private final Setting<Boolean> doublePop = bool("DoublePop", true);
     private final Setting<Integer> popDelay = integer("PopDelay", 10, 0, 20);
     private final Setting<Boolean> pingComp = bool("PingComp", true);
     private final Setting<Boolean> debug = bool("Debug", false);
 
-    private static final double POP_TRACK_RANGE = 12.0;
-    private static final int TOTEM_POP_STATUS = 35;
-    private static final double CRYSTAL_POWER = 6.0;
     private static final double REACH = 4.5;
     private static final int RESTOCK_THRESHOLD = 10;
     private static final int RESTOCK_COOLDOWN_TICKS = 5;
-    private static final long POP_FORGET_NANOS = 5_000_000_000L;
-    private static final EquipmentSlot[] ARMOR_SLOTS = {
-            EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET
-    };
-
-    private record Received(Packet<?> packet, long nanos) {
-    }
+    private static final int MEMORY_SIZE_LIMIT = 64;
+    private static final int MEMORY_MAX_AGE_TICKS = 40;
 
     private record Placement(BlockPos base, double damage, boolean lethal, Box crystalBox) {
     }
 
-    // Written on the network thread (queue) and drained on the client tick.
-    private final Queue<Received> pending = new ConcurrentLinkedQueue<>();
-    private final Map<Integer, Long> popNanos = new HashMap<>();
-    private final Map<Integer, Double> swapAverageMs = new HashMap<>();
-    private final Map<Integer, Long> lastHitTick = new ConcurrentHashMap<>();
+    private final PopTracker pops;
+    private final CrystalDamage calculator;
+
+    private final Map<Integer, Long> lastHitTick = new HashMap<>();
+    // Crystal spots we already sent a placement for. The crystal entity only shows up on our
+    // client after the server's spawn packet (about one ping later), so without this the same
+    // spot looks empty and gets re-placed every tick.
+    private final Map<BlockPos, Long> recentPlacements = new HashMap<>();
 
     private long tickCounter;
-    private long holdUntilTick = -1;
     private long lastRestockTick = -100;
+    private long lastObsidianTick = -100;
     private int lastTargetId = -1;
     private Vec3d lastTargetPos = Vec3d.ZERO;
-    private double protectionReduction;
     private boolean rotated;
 
     public AutoCrystal(Nomnom nomnom) {
@@ -139,14 +121,17 @@ public class AutoCrystal extends NomnomModule {
                 Category.COMBAT,
                 "Automatically places and breaks end crystals"
         );
+
+        this.pops = new PopTracker(mc);
+        this.calculator = new CrystalDamage(mc);
     }
 
     @Override
     public void onDisable() {
-        pending.clear();
-        popNanos.clear();
+        pops.reset();
+        calculator.reset();
         lastHitTick.clear();
-        holdUntilTick = -1;
+        recentPlacements.clear();
         lastTargetId = -1;
         rotated = false;
     }
@@ -155,21 +140,9 @@ public class AutoCrystal extends NomnomModule {
 
     @Listener
     public void onPacket(PacketEvent.Receive event) {
-        // Network thread: only queue the packet, it is resolved on the client tick.
-        if (!doublePop.getValue()) {
-            return;
-        }
-
-        Packet<?> packet = event.getPacket();
-        boolean pop = packet instanceof EntityStatusS2CPacket status
-                && status.getStatus() == TOTEM_POP_STATUS;
-
-        if (pop || packet instanceof EntityEquipmentUpdateS2CPacket) {
-            pending.add(new Received(packet, System.nanoTime()));
-
-            if (pending.size() > 512) {
-                pending.poll();
-            }
+        // Network thread: PopTracker only queues the packet, it is resolved on the client tick.
+        if (doublePop.getValue()) {
+            pops.onPacket(event.getPacket());
         }
     }
 
@@ -193,17 +166,9 @@ public class AutoCrystal extends NomnomModule {
 
     private void run() {
         tickCounter++;
-        processPending();
 
-        boolean holding = false;
-        if (holdUntilTick >= 0) {
-            if (doublePop.getValue() && tickCounter < holdUntilTick) {
-                holding = true;
-            } else {
-                holdUntilTick = -1;
-                debugMessage("Hold over, breaking crystals");
-            }
-        }
+        pops.process(tickCounter, popDelay.getValue(), pingComp.getValue(), this::debugMessage);
+        boolean holding = pops.holding(tickCounter, doublePop.getValue(), this::debugMessage);
 
         restockCrystals();
 
@@ -214,7 +179,7 @@ public class AutoCrystal extends NomnomModule {
         }
 
         // Where the target will roughly be when our crystal explodes.
-        Vec3d position = positionOf(target);
+        Vec3d position = CrystalDamage.positionOf(target);
         Vec3d velocity = target.getId() == lastTargetId
                 ? position.subtract(lastTargetPos)
                 : Vec3d.ZERO;
@@ -225,7 +190,7 @@ public class AutoCrystal extends NomnomModule {
         lastTargetPos = position;
         Vec3d predicted = position.add(velocity.multiply(predict.getValue()));
 
-        protectionReduction = protectionReductionOf(target);
+        calculator.update(tickCounter, target, readEnchants.getValue(), assumedProtection.getValue());
 
         double healthTotal = target.getHealth() + target.getAbsorptionAmount();
         boolean facePlace = facePlaceHealth.getValue() > 0
@@ -241,78 +206,20 @@ public class AutoCrystal extends NomnomModule {
         }
     }
 
-    // ------------------------------------------------------- pops and swap timing
-
-    private void processPending() {
-        long now = System.nanoTime();
-        Received received;
-
-        while ((received = pending.poll()) != null) {
-            if (received.packet() instanceof EntityStatusS2CPacket status) {
-                handlePop(status, received.nanos());
-            } else if (received.packet() instanceof EntityEquipmentUpdateS2CPacket equipment) {
-                handleEquipment(equipment, received.nanos());
-            }
-        }
-
-        popNanos.values().removeIf(time -> now - time > POP_FORGET_NANOS);
-    }
-
-    private void handlePop(EntityStatusS2CPacket packet, long arrivedAt) {
-        Entity entity = packet.getEntity(mc.world);
-        if (entity == null
-                || entity == mc.player
-                || mc.player.squaredDistanceTo(entity) > POP_TRACK_RANGE * POP_TRACK_RANGE) {
-            return;
-        }
-
-        popNanos.put(entity.getId(), arrivedAt);
-
-        // The pop packet reaches us about half a round trip late and our attack needs the
-        // other half to get back, so the wait shrinks by the ping (floored, to stay safe).
-        int wait = popDelay.getValue();
-        if (pingComp.getValue()) {
-            wait -= pingTicks();
-        }
-        wait = Math.max(0, wait);
-
-        holdUntilTick = tickCounter + wait;
-        debugMessage("Pop on " + entity.getName().getString() + ", holding breaks for " + wait + " ticks");
-    }
-
-    /** Measures how long a player takes to put a new totem in their offhand after popping. */
-    private void handleEquipment(EntityEquipmentUpdateS2CPacket packet, long arrivedAt) {
-        int id = packet.getEntityId();
-        Long poppedAt = popNanos.get(id);
-        if (poppedAt == null) {
-            return;
-        }
-
-        for (var pair : packet.getEquipmentList()) {
-            if (pair.getFirst() == EquipmentSlot.OFFHAND
-                    && pair.getSecond().isOf(Items.TOTEM_OF_UNDYING)) {
-                double delayMs = (arrivedAt - poppedAt) / 1_000_000.0;
-                double average = swapAverageMs.merge(id, delayMs, (old, now) -> old * 0.5 + now * 0.5);
-
-                Entity entity = mc.world.getEntityById(id);
-                String name = entity == null ? "player" : entity.getName().getString();
-                debugMessage(String.format("%s re-equipped a totem in %.0f ms (average %.0f ms)",
-                        name, delayMs, average));
-
-                popNanos.remove(id);
-                return;
-            }
-        }
-    }
-
-    private int pingTicks() {
-        var entry = mc.getNetworkHandler().getPlayerListEntry(mc.player.getUuid());
-        return entry == null ? 0 : entry.getLatency() / 50;
-    }
-
     private void debugMessage(String message) {
         if (debug.getValue() && mc.player != null) {
             mc.player.sendMessage(Text.literal("[AutoCrystal] " + message), false);
+        }
+    }
+
+    /** Ticks a sent placement is remembered: about one round trip plus a little slack. */
+    private int memoryTicks() {
+        return pops.pingTicks() + 2;
+    }
+
+    private void pruneMemory(Map<?, Long> memory) {
+        if (memory.size() > MEMORY_SIZE_LIMIT) {
+            memory.values().removeIf(tick -> tickCounter - tick > MEMORY_MAX_AGE_TICKS);
         }
     }
 
@@ -335,7 +242,7 @@ public class AutoCrystal extends NomnomModule {
                 continue;
             }
 
-            double damage = crystalDamage(target, predicted, positionOf(crystal));
+            double damage = calculator.damage(target, predicted, CrystalDamage.positionOf(crystal));
 
             if (damage >= bestDamage) {
                 best = crystal;
@@ -353,9 +260,10 @@ public class AutoCrystal extends NomnomModule {
         mc.player.swingHand(Hand.MAIN_HAND);
 
         lastHitTick.put(best.getId(), tickCounter);
-        if (lastHitTick.size() > 64) {
-            lastHitTick.values().removeIf(tick -> tickCounter - tick > 40);
-        }
+        pruneMemory(lastHitTick);
+
+        // The spot is free again, so a new crystal may go there straight away.
+        recentPlacements.remove(BlockPos.ofFloored(best.getX(), best.getY() - 1.0, best.getZ()));
 
         if (instantRemove.getValue()) {
             mc.world.removeEntity(best.getId(), Entity.RemovalReason.KILLED);
@@ -389,6 +297,7 @@ public class AutoCrystal extends NomnomModule {
         }
 
         int range = placeRange.getValue();
+        int memory = memoryTicks();
         BlockPos targetPos = target.getBlockPos();
 
         // Collect every valid spot with the damage it would deal, then take the best ones.
@@ -405,6 +314,11 @@ public class AutoCrystal extends NomnomModule {
 
             if (!mc.world.getBlockState(base).isOf(Blocks.OBSIDIAN)
                     && !mc.world.getBlockState(base).isOf(Blocks.BEDROCK)) {
+                continue;
+            }
+
+            Long placedAt = recentPlacements.get(base);
+            if (placedAt != null && tickCounter - placedAt < memory) {
                 continue;
             }
 
@@ -435,7 +349,7 @@ public class AutoCrystal extends NomnomModule {
                     above.getZ() + 0.5
             );
 
-            double damage = crystalDamage(target, predicted, explosionCentre);
+            double damage = calculator.damage(target, predicted, explosionCentre);
 
             if (damage < requiredDamage) {
                 continue;
@@ -497,6 +411,8 @@ public class AutoCrystal extends NomnomModule {
                 faceSilently(hitPoint);
                 mc.interactionManager.interactBlock(mc.player, hand, hit);
                 mc.player.swingHand(hand);
+
+                recentPlacements.put(placement.base(), tickCounter);
             }
         };
 
@@ -505,10 +421,18 @@ public class AutoCrystal extends NomnomModule {
         } else {
             withSilentSlot(crystalSlot, placeAll);
         }
+
+        pruneMemory(recentPlacements);
     }
 
     /** Places one obsidian block where a crystal on top of it would hurt the target most. */
     private void placeObsidianBase(LivingEntity target, Vec3d predicted, double requiredDamage) {
+        // The block only appears on our client after the server's update (about one ping), so
+        // wait that long before placing another instead of stacking blocks on every tick.
+        if (tickCounter - lastObsidianTick < memoryTicks()) {
+            return;
+        }
+
         int obsidianSlot = findHotbarSlot(Items.OBSIDIAN);
         if (obsidianSlot == -1) {
             return;
@@ -556,7 +480,7 @@ public class AutoCrystal extends NomnomModule {
                     above.getZ() + 0.5
             );
 
-            double damage = crystalDamage(target, predicted, explosionCentre);
+            double damage = calculator.damage(target, predicted, explosionCentre);
 
             if (damage <= bestDamage) {
                 continue;
@@ -583,6 +507,8 @@ public class AutoCrystal extends NomnomModule {
             mc.interactionManager.interactBlock(mc.player, Hand.MAIN_HAND, hit);
             mc.player.swingHand(Hand.MAIN_HAND);
         });
+
+        lastObsidianTick = tickCounter;
     }
 
     /** A click on a neighbouring solid block that places a block at {@code base}. */
@@ -667,142 +593,6 @@ public class AutoCrystal extends NomnomModule {
     private void sendLook(float yaw, float pitch) {
         mc.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.LookAndOnGround(
                 yaw, pitch, mc.player.isOnGround(), mc.player.horizontalCollision));
-    }
-
-    // ------------------------------------------------------------------- damage
-
-    /**
-     * Damage a crystal exploding at {@code centre} deals to {@code target} standing at
-     * {@code targetPos}, following the vanilla explosion formula: distance falloff, exposure,
-     * difficulty, armor, resistance and enchantment protection. Absorption is ignored.
-     */
-    private double crystalDamage(LivingEntity target, Vec3d targetPos, Vec3d centre) {
-        double diameter = CRYSTAL_POWER * 2.0;
-        double distance = targetPos.distanceTo(centre) / diameter;
-
-        if (distance > 1.0) {
-            return 0.0;
-        }
-
-        double impact = (1.0 - distance) * exposure(centre, target, targetPos);
-        double damage = (int) ((impact * impact + impact) / 2.0 * 7.0 * diameter + 1.0);
-
-        if (target instanceof PlayerEntity) {
-            damage = switch (mc.world.getDifficulty()) {
-                case PEACEFUL -> 0.0;
-                case EASY -> Math.min(damage / 2.0 + 1.0, damage);
-                case NORMAL -> damage;
-                case HARD -> damage * 1.5;
-            };
-        }
-
-        // Armor and toughness.
-        double armor = target.getAttributeValue(EntityAttributes.ARMOR);
-        double toughness = target.getAttributeValue(EntityAttributes.ARMOR_TOUGHNESS);
-        double reduction = MathHelper.clamp(
-                armor - damage / (2.0 + toughness / 4.0),
-                armor * 0.2,
-                20.0
-        );
-        damage *= 1.0 - reduction / 25.0;
-
-        // Resistance effect.
-        StatusEffectInstance resistance = target.getStatusEffect(StatusEffects.RESISTANCE);
-        if (resistance != null) {
-            damage *= Math.max(0, 25 - (resistance.getAmplifier() + 1) * 5) / 25.0;
-        }
-
-        // Enchantment protection (computed once per tick for the target).
-        damage *= 1.0 - protectionReduction;
-
-        return Math.max(0.0, damage);
-    }
-
-    /**
-     * Fraction (0..1) of the damage removed by the target's Protection / Blast Protection.
-     * Protection counts 1 per level and Blast Protection 2 per level, capped at 20 points.
-     */
-    private double protectionReductionOf(LivingEntity target) {
-        if (!(target instanceof PlayerEntity)) {
-            return 0.0;
-        }
-
-        if (readEnchants.getValue()) {
-            try {
-                var registry = mc.world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT);
-                var protection = registry.getOrThrow(Enchantments.PROTECTION);
-                var blastProtection = registry.getOrThrow(Enchantments.BLAST_PROTECTION);
-
-                int points = 0;
-                for (EquipmentSlot slot : ARMOR_SLOTS) {
-                    ItemStack stack = target.getEquippedStack(slot);
-
-                    if (stack.isEmpty()) {
-                        continue;
-                    }
-
-                    points += EnchantmentHelper.getLevel(protection, stack);
-                    points += 2 * EnchantmentHelper.getLevel(blastProtection, stack);
-                }
-
-                return Math.min(20, points) / 25.0;
-            } catch (RuntimeException ignored) {
-                // Fall through to the assumed value.
-            }
-        }
-
-        return Math.min(20, assumedProtection.getValue()) / 25.0;
-    }
-
-    /** Fraction of sample points on the target's hitbox that the explosion can reach. */
-    private float exposure(Vec3d source, Entity entity, Vec3d entityPos) {
-        Box box = entity.getBoundingBox().offset(entityPos.subtract(positionOf(entity)));
-
-        double stepX = 1.0 / ((box.maxX - box.minX) * 2.0 + 1.0);
-        double stepY = 1.0 / ((box.maxY - box.minY) * 2.0 + 1.0);
-        double stepZ = 1.0 / ((box.maxZ - box.minZ) * 2.0 + 1.0);
-
-        if (stepX < 0.0 || stepY < 0.0 || stepZ < 0.0) {
-            return 0.0f;
-        }
-
-        double offsetX = (1.0 - Math.floor(1.0 / stepX) * stepX) / 2.0;
-        double offsetZ = (1.0 - Math.floor(1.0 / stepZ) * stepZ) / 2.0;
-
-        int reached = 0;
-        int total = 0;
-
-        for (double x = 0.0; x <= 1.0; x += stepX) {
-            for (double y = 0.0; y <= 1.0; y += stepY) {
-                for (double z = 0.0; z <= 1.0; z += stepZ) {
-                    Vec3d point = new Vec3d(
-                            MathHelper.lerp(x, box.minX, box.maxX) + offsetX,
-                            MathHelper.lerp(y, box.minY, box.maxY),
-                            MathHelper.lerp(z, box.minZ, box.maxZ) + offsetZ
-                    );
-
-                    HitResult hit = mc.world.raycast(new RaycastContext(
-                            point,
-                            source,
-                            RaycastContext.ShapeType.COLLIDER,
-                            RaycastContext.FluidHandling.NONE,
-                            entity
-                    ));
-
-                    if (hit.getType() == HitResult.Type.MISS) {
-                        reached++;
-                    }
-
-                    total++;
-                }
-            }
-        }
-
-        return total == 0 ? 0.0f : (float) reached / total;
-    }
-
-    private static Vec3d positionOf(Entity entity) {
-        return new Vec3d(entity.getX(), entity.getY(), entity.getZ());
     }
 
     // ---------------------------------------------------------------- inventory

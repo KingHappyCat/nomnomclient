@@ -8,30 +8,35 @@ import net.staro.nomnom.api.event.listener.SafeListener;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.BiFunction;
 
 /**
  * The event bus for registering and distributing events.
+ *
+ * <p>Events may be posted from any thread (packet events come from the network thread) while
+ * modules subscribe and unsubscribe on the main thread. Listener lists are copy-on-write, so
+ * a post always iterates a stable snapshot: it can't throw a ConcurrentModificationException,
+ * and a listener may safely unsubscribe itself (or its module) while handling an event.
+ *
  * @see EventListener
  */
 public class EventBus {
     /**
-     * A hashmap is used for fast event lookup. Listeners are put into a list based on their event class.
+     * Listeners are put into a list based on their event class, sorted by priority.
      */
-    private final HashMap<Class<?>, LinkedList<EventListener>> listeners;
+    private final Map<Class<?>, CopyOnWriteArrayList<EventListener>> listeners = new ConcurrentHashMap<>();
     /**
-     * Weak references subscribed objects to the event types they are listening to.
-     * This allows an automatic subscription when the object is garbage collected.
+     * Subscribed objects (compared by identity) mapped to the event types they listen to.
      */
-    private final WeakHashMap<Object, List<Class<?>>> subscriptions;
+    private final Map<Object, List<Class<?>>> subscriptions = Collections.synchronizedMap(new IdentityHashMap<>());
     /**
      * Stores factory functions for creating listeners based on their annotations.
      */
     private final Map<Class<? extends Annotation>, BiFunction<Object, Method, EventListener>> listenerFactories = new HashMap<>();
 
     public EventBus() {
-        this.listeners = new HashMap<>();
-        this.subscriptions = new WeakHashMap<>();
         // registering a regular listener
         registerListenerFactory(Listener.class, (instance, method) ->
                 new EventListener(instance, method, method.getAnnotation(Listener.class).priority().getVal())
@@ -55,22 +60,18 @@ public class EventBus {
     }
 
     /**
-     * Posts an event to all registered listeners.
+     * Posts an event to all registered listeners. Listeners are keyed by the exact event class.
      * @param event The event object.
      */
     public void post(Object event) {
-        removeStaleListeners();
-        if (!listeners.containsKey(event.getClass())) {
+        List<EventListener> list = listeners.get(event.getClass());
+        if (list == null) {
             return;
         }
 
-        for (EventListener l : listeners.get(event.getClass())) {
-            if (l.getInstance() != null) {
-                Class<?> eventParamType = l.getMethod().getParameterTypes()[0];
-                if (eventParamType.isAssignableFrom(event.getClass())) {
-                    l.invoke(event);
-                }
-            }
+        // The copy-on-write list gives this loop a snapshot, so listeners may (un)subscribe.
+        for (EventListener l : list) {
+            l.invoke(event);
         }
     }
 
@@ -78,7 +79,7 @@ public class EventBus {
      * Subscribes listeners.
      * @param instance is a listener.
      */
-    public void subscribe(Object instance) {
+    public synchronized void subscribe(Object instance) {
         addListeners(getListeningMethods(instance.getClass()), instance);
     }
 
@@ -86,13 +87,13 @@ public class EventBus {
      * Unsubscribes listeners.
      * @param instance is a listener
      */
-    public void unsubscribe(Object instance) {
+    public synchronized void unsubscribe(Object instance) {
         removeListeners(getListeningMethods(instance.getClass()), instance);
         subscriptions.remove(instance);
     }
 
     public boolean isSubscribed(Object object) {
-        return subscriptions.containsKey(object.getClass());
+        return subscriptions.containsKey(object);
     }
 
     /**
@@ -105,8 +106,8 @@ public class EventBus {
         List<Class<?>> subscribedEvents = subscriptions.computeIfAbsent(instance, k -> new ArrayList<>());
         for (var method : methods) {
             Class<?> eventType = getEventParameterType(method);
-            listeners.putIfAbsent(eventType, new LinkedList<>());
-            LinkedList<EventListener> list = listeners.get(eventType);
+            CopyOnWriteArrayList<EventListener> list =
+                    listeners.computeIfAbsent(eventType, k -> new CopyOnWriteArrayList<>());
             for (var annotation : method.getAnnotations()) {
                 if (listenerFactories.containsKey(annotation.annotationType())) {
                     BiFunction<Object, Method, EventListener> factory = listenerFactories.get(annotation.annotationType());
@@ -120,15 +121,14 @@ public class EventBus {
         }
     }
 
-    private int getPriorityIndex(LinkedList<EventListener> list, int priority) {
+    /**
+     * Finds where a listener with the given priority goes: after every listener with a higher
+     * priority and before the ones with the same or a lower priority.
+     */
+    private int getPriorityIndex(List<EventListener> list, int priority) {
         int index = list.size();
-        Iterator<EventListener> iterator = list.descendingIterator();
-        while (iterator.hasNext()) {
-            if (iterator.next().getPriority() > priority) {
-                break;
-            } else {
-                index--;
-            }
+        while (index > 0 && list.get(index - 1).getPriority() <= priority) {
+            index--;
         }
         return index;
     }
@@ -142,7 +142,7 @@ public class EventBus {
     private void removeListeners(List<Method> methods, Object instance) {
         for (var method : methods) {
             Class<?> eventType = getEventParameterType(method);
-            LinkedList<EventListener> list = listeners.get(eventType);
+            CopyOnWriteArrayList<EventListener> list = listeners.get(eventType);
             if (list == null) {
                 continue;
             }
@@ -169,16 +169,6 @@ public class EventBus {
         }
 
         return method.getParameters()[0].getType();
-    }
-
-    /**
-     * Removes the garbage collected listeners.
-     */
-    private void removeStaleListeners() {
-        for (Class<?> eventType : listeners.keySet()) {
-            LinkedList<EventListener> list = listeners.get(eventType);
-            list.removeIf(l -> l.getInstance() == null);
-        }
     }
 
 }
