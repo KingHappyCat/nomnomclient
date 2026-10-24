@@ -1,0 +1,49 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:zombie": 17,
+      "minecraft:skeleton": 1,
+      "minecraft:warden": 4,
+      "minecraft:creeper": 3,
+      "minecraft:endermite": 22,
+      "minecraft:bat": 2,
+      "minecraft:spider": 4
+    },
+    "minecraft:used": {
+      "minecraft:netherite_sword": 55,
+      "minecraft:totem_of_undying": 8,
+      "minecraft:end_crystal": 602,
+      "minecraft:obsidian": 159
+    },
+    "minecraft:picked_up": {
+      "minecraft:dirt": 14,
+      "minecraft:string": 2,
+      "minecraft:cobblestone": 9,
+      "minecraft:sculk_catalyst": 3,
+      "minecraft:snowball": 1,
+      "minecraft:gunpowder": 3,
+      "minecraft:bone": 2,
+      "minecraft:arrow": 2,
+      "minecraft:rotten_flesh": 3
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 10718,
+      "minecraft:walk_one_cm": 35878,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 53,
+      "minecraft:damage_taken": 8708,
+      "minecraft:damage_dealt": 3881,
+      "minecraft:play_time": 10718,
+      "minecraft:damage_absorbed": 400,
+      "minecraft:jump": 35,
+      "minecraft:time_since_death": 10718,
+      "minecraft:sprint_one_cm": 8616,
+      "minecraft:total_world_time": 10795,
+      "minecraft:fly_one_cm": 19853,
+      "minecraft:walk_on_water_one_cm": 1101,
+      "minecraft:crouch_one_cm": 65,
+      "minecraft:sneak_time": 121
+    }
+  },
+  "DataVersion": 4671
+}

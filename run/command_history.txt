@@ -39,3 +39,4 @@
 /summon minecraft:endermite
 /summon minecraft:warden
 /summon minecraft:endermite
+/summon minecraft:warden
