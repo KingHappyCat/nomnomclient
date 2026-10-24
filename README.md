@@ -73,7 +73,7 @@ On Windows, use `gradlew.bat build` or `gradlew.bat runClient` instead.
 
 1. Install Minecraft 1.21.11 with Fabric Loader.
 2. Install a compatible Fabric API version.
-3. Build the project with `./gradlew build`, or use a release JAR if one becomes available.
+3. Build the project with `./gradlew build`, or use a release JAR.
 4. Copy the appropriate mod JAR from `build/libs/` into the `mods` folder of the Minecraft game directory used by your Fabric profile.
 5. Launch the Fabric profile.
 
