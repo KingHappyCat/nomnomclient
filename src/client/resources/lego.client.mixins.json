@@ -12,6 +12,12 @@
     "entity.MixinClientPlayerEntity",
     "network.MixinClientPlayNetworkHandler",
     "render.MixinCamera",
+    "render.MixinInGameOverlayRenderer",
+    "render.MixinGameRenderer",
+    "render.MixinBossBarHud",
+    "render.MixinInGameHud",
+    "render.MixinWeatherRendering",
+    "render.MixinParticleManager",
     "client.IMinecraftClient"
   ],
   "injectors": {

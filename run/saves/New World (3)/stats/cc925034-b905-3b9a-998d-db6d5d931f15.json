@@ -1,0 +1,42 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:spruce_sapling": 1,
+      "minecraft:cobblestone": 11,
+      "minecraft:sculk_catalyst": 2,
+      "minecraft:gravel": 3,
+      "minecraft:snowball": 16,
+      "minecraft:gunpowder": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 4427,
+      "minecraft:walk_one_cm": 13082,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 13,
+      "minecraft:damage_dealt": 2227,
+      "minecraft:play_time": 4427,
+      "minecraft:jump": 12,
+      "minecraft:time_since_death": 4427,
+      "minecraft:sprint_one_cm": 7422,
+      "minecraft:total_world_time": 4522,
+      "minecraft:fly_one_cm": 6000,
+      "minecraft:crouch_one_cm": 8,
+      "minecraft:sneak_time": 40
+    },
+    "minecraft:killed": {
+      "minecraft:skeleton": 2,
+      "minecraft:warden": 4,
+      "minecraft:creeper": 1,
+      "minecraft:rabbit": 1,
+      "minecraft:cow": 1,
+      "minecraft:bat": 1,
+      "minecraft:spider": 3
+    },
+    "minecraft:used": {
+      "minecraft:netherite_sword": 24,
+      "minecraft:end_crystal": 540,
+      "minecraft:obsidian": 84
+    }
+  },
+  "DataVersion": 4671
+}

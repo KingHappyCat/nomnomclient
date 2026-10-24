@@ -40,3 +40,5 @@
 /summon minecraft:warden
 /summon minecraft:endermite
 /summon minecraft:warden
+/enchant Player23 minecraft:knockback 2
+/summon minecraft:warden

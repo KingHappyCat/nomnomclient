@@ -1,4 +1,3 @@
-
 package net.staro.nomnom.module.modules;
 
 import net.staro.nomnom.Nomnom;
@@ -7,6 +6,9 @@ import net.staro.nomnom.module.Category;
 import net.staro.nomnom.module.NomnomModule;
 
 public class NoRender extends NomnomModule {
+
+    /** Handle for the mixins in {@code mixin.render}, which can't get module instances injected. */
+    public static NoRender INSTANCE;
 
     private final Setting<Boolean> fire =
             bool("Fire", true);
@@ -39,6 +41,7 @@ public class NoRender extends NomnomModule {
                 Category.RENDER,
                 "Hides selected visual effects"
         );
+        INSTANCE = this;
     }
 
     public boolean hideFire() {
