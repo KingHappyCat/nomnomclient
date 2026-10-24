@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "nomnomclient",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "name": "nomnomclient",
   "description": "nomnomclient!",
   "authors": [nomwe],
-  "contact": {nomwe.pages.dev},
+  "contact": {},
   "license": "All-Rights-Reserved",
   "environment": "client",
   "entrypoints": {},

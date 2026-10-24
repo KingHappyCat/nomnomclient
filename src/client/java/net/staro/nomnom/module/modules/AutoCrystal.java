@@ -325,8 +325,7 @@ public class AutoCrystal extends NomnomModule {
             BlockPos above = base.up();
 
             // Require space for the crystal.
-            if (!mc.world.getBlockState(above).isAir()
-                    || !mc.world.getBlockState(above.up()).isAir()) {
+            if (!mc.world.getBlockState(above).isAir()){
                 continue;
             }
 
@@ -459,8 +458,7 @@ public class AutoCrystal extends NomnomModule {
 
             BlockPos above = base.up();
 
-            if (!mc.world.getBlockState(above).isAir()
-                    || !mc.world.getBlockState(above.up()).isAir()) {
+            if (!mc.world.getBlockState(above).isAir()) {
                 continue;
             }
 
