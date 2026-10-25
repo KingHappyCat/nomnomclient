@@ -1,0 +1,46 @@
+{
+  "stats": {
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 1537,
+      "minecraft:walk_one_cm": 3169,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 11,
+      "minecraft:damage_taken": 126,
+      "minecraft:play_time": 4527,
+      "minecraft:jump": 27,
+      "minecraft:time_since_death": 1513,
+      "minecraft:aviate_one_cm": 250851,
+      "minecraft:drop": 1,
+      "minecraft:sprint_one_cm": 1567,
+      "minecraft:total_world_time": 4539,
+      "minecraft:fly_one_cm": 27438,
+      "minecraft:sneak_time": 63,
+      "minecraft:deaths": 1
+    },
+    "minecraft:picked_up": {
+      "minecraft:spruce_log": 1,
+      "minecraft:snowball": 41,
+      "minecraft:gunpowder": 1,
+      "minecraft:bone": 2,
+      "minecraft:arrow": 1
+    },
+    "minecraft:used": {
+      "minecraft:sculk_catalyst": 1,
+      "minecraft:elytra": 1,
+      "minecraft:end_crystal": 140,
+      "minecraft:firework_rocket": 17,
+      "minecraft:obsidian": 45
+    },
+    "minecraft:dropped": {
+      "minecraft:spruce_log": 1
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 2,
+      "minecraft:skeleton": 2,
+      "minecraft:creeper": 4,
+      "minecraft:wolf": 1,
+      "minecraft:spider": 2
+    }
+  },
+  "DataVersion": 4671
+}

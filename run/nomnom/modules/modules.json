@@ -146,5 +146,31 @@
     "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
+  },
+  "ElytraFly": {
+    "Mode": "BOOST",
+    "Speed": "6.0",
+    "Vertical Speed": "0.8",
+    "Hover": "true",
+    "Look Vertical": "false",
+    "Auto Takeoff": "true",
+    "Anti Kinetic": "true",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "HUD": {
+    "Watermark": "true",
+    "Module List": "true",
+    "Hide Render Modules": "true",
+    "Coordinates": "true",
+    "Speed": "true",
+    "Ping": "true",
+    "FPS": "true",
+    "Totems and Crystals": "false",
+    "Rainbow": "true",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
   }
 }
