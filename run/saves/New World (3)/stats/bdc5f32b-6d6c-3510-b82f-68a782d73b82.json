@@ -1,0 +1,32 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:dirt": 3,
+      "minecraft:cobblestone": 3,
+      "minecraft:sculk_catalyst": 2,
+      "minecraft:andesite": 1
+    },
+    "minecraft:used": {
+      "minecraft:end_crystal": 323,
+      "minecraft:obsidian": 104
+    },
+    "minecraft:killed": {
+      "minecraft:warden": 4
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 751,
+      "minecraft:time_since_rest": 1620,
+      "minecraft:walk_one_cm": 6669,
+      "minecraft:total_world_time": 1636,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 443,
+      "minecraft:mob_kills": 4,
+      "minecraft:walk_on_water_one_cm": 103,
+      "minecraft:sneak_time": 13,
+      "minecraft:play_time": 1620,
+      "minecraft:jump": 12,
+      "minecraft:time_since_death": 1620
+    }
+  },
+  "DataVersion": 4671
+}

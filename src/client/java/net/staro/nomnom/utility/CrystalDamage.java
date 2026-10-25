@@ -25,70 +25,103 @@ import java.util.Map;
  * End crystal damage, following the vanilla explosion formula: distance falloff, exposure,
  * difficulty, armor, resistance and enchantment protection. Absorption is ignored.
  *
- * <p>Exposure needs about 45 raycasts per call, so results are cached for a few ticks. A
- * target that stands still (common while crystalling) then costs almost nothing after the
- * first tick. Client tick thread only.
+ * <p>Exposure needs about 45 raycasts per call, so it is the expensive part. Three things keep
+ * that cheap:
+ * <ul>
+ *   <li>{@link #estimate} gives an upper bound (full exposure) with plain math, so callers can
+ *       throw away spots that can't matter and stop searching once nothing left can win;</li>
+ *   <li>entity positions are snapped to 1/16 block for the cache, so a slowly moving or
+ *       standing target keeps hitting the cache;</li>
+ *   <li>results are cached per entity for a few ticks.</li>
+ * </ul>
+ * Works for any entity, so the same code gives the damage to the target and to yourself.
+ * Client tick thread only.
  */
 public class CrystalDamage {
     private static final double CRYSTAL_POWER = 6.0;
     private static final int CACHE_TICKS = 5;
-    private static final int MAX_CACHE_ENTRIES = 4096;
+    private static final int MAX_CACHE_ENTRIES = 8192;
+    private static final double DIAMETER = CRYSTAL_POWER * 2.0;
+    private static final double SNAP = 16.0;
     private static final EquipmentSlot[] ARMOR_SLOTS = {
             EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET
     };
 
-    private record ExposureKey(double cx, double cy, double cz, double tx, double ty, double tz) {
+    private record ExposureKey(int id, double cx, double cy, double cz, double tx, double ty, double tz) {
     }
 
     private final MinecraftClient mc;
     private final Map<ExposureKey, Float> exposureCache = new HashMap<>();
+    private final Map<Integer, Double> protectionCache = new HashMap<>();
     private long cacheStartTick = -1;
-    private int cacheTargetId = -1;
-    private double protectionReduction;
+    private boolean readEnchants = true;
+    private int assumedProtection = 16;
 
     public CrystalDamage(MinecraftClient mc) {
         this.mc = mc;
     }
 
-    /** Call once per tick before asking for damage values for {@code target}. */
-    public void update(long tick, LivingEntity target, boolean readEnchants, int assumedProtection) {
-        if (target.getId() != cacheTargetId
-                || tick - cacheStartTick >= CACHE_TICKS
-                || exposureCache.size() > MAX_CACHE_ENTRIES) {
+    /** Call once per tick before asking for damage values. */
+    public void update(long tick, boolean readEnchants, int assumedProtection) {
+        this.readEnchants = readEnchants;
+        this.assumedProtection = assumedProtection;
+
+        // Armor can change from one tick to the next, so protection is looked up again each tick.
+        protectionCache.clear();
+
+        if (tick - cacheStartTick >= CACHE_TICKS || exposureCache.size() > MAX_CACHE_ENTRIES) {
             exposureCache.clear();
             cacheStartTick = tick;
-            cacheTargetId = target.getId();
         }
-
-        protectionReduction = protectionReductionOf(target, readEnchants, assumedProtection);
     }
 
     public void reset() {
         exposureCache.clear();
-        cacheTargetId = -1;
+        protectionCache.clear();
         cacheStartTick = -1;
     }
 
     /**
-     * Damage a crystal exploding at {@code centre} deals to {@code target} standing at
-     * {@code targetPos}.
+     * Damage a crystal exploding at {@code centre} deals to {@code entity} standing at
+     * {@code entityPos}.
      */
-    public double damage(LivingEntity target, Vec3d targetPos, Vec3d centre) {
-        double diameter = CRYSTAL_POWER * 2.0;
-        double distance = targetPos.distanceTo(centre) / diameter;
+    public double damage(LivingEntity entity, Vec3d entityPos, Vec3d centre) {
+        double distance = entityPos.distanceTo(centre) / DIAMETER;
 
         if (distance > 1.0) {
             return 0.0;
         }
 
-        ExposureKey key = new ExposureKey(
-                centre.x, centre.y, centre.z, targetPos.x, targetPos.y, targetPos.z);
-        float exposure = exposureCache.computeIfAbsent(key, k -> exposure(centre, target, targetPos));
+        double x = snap(entityPos.x);
+        double y = snap(entityPos.y);
+        double z = snap(entityPos.z);
 
+        ExposureKey key = new ExposureKey(entity.getId(), centre.x, centre.y, centre.z, x, y, z);
+        float exposure = exposureCache.computeIfAbsent(
+                key, k -> exposure(centre, entity, new Vec3d(x, y, z)));
+
+        return reduce(entity, distance, exposure);
+    }
+
+    /**
+     * Upper bound of {@link #damage}: assumes nothing blocks the explosion. Plain math, no
+     * raycasts, so it is safe to call for every candidate spot.
+     */
+    public double estimate(LivingEntity entity, Vec3d entityPos, Vec3d centre) {
+        double distance = entityPos.distanceTo(centre) / DIAMETER;
+
+        if (distance > 1.0) {
+            return 0.0;
+        }
+
+        return reduce(entity, distance, 1.0);
+    }
+
+    private double reduce(LivingEntity entity, double distance, double exposure) {
         double impact = (1.0 - distance) * exposure;
-        double damage = (int) ((impact * impact + impact) / 2.0 * 7.0 * diameter + 1.0);
+        double damage = (int) ((impact * impact + impact) / 2.0 * 7.0 * DIAMETER + 1.0);
 
-        if (target instanceof PlayerEntity) {
+        if (entity instanceof PlayerEntity) {
             damage = switch (mc.world.getDifficulty()) {
                 case PEACEFUL -> 0.0;
                 case EASY -> Math.min(damage / 2.0 + 1.0, damage);
@@ -98,8 +131,8 @@ public class CrystalDamage {
         }
 
         // Armor and toughness.
-        double armor = target.getAttributeValue(EntityAttributes.ARMOR);
-        double toughness = target.getAttributeValue(EntityAttributes.ARMOR_TOUGHNESS);
+        double armor = entity.getAttributeValue(EntityAttributes.ARMOR);
+        double toughness = entity.getAttributeValue(EntityAttributes.ARMOR_TOUGHNESS);
         double reduction = MathHelper.clamp(
                 armor - damage / (2.0 + toughness / 4.0),
                 armor * 0.2,
@@ -108,15 +141,20 @@ public class CrystalDamage {
         damage *= 1.0 - reduction / 25.0;
 
         // Resistance effect.
-        StatusEffectInstance resistance = target.getStatusEffect(StatusEffects.RESISTANCE);
+        StatusEffectInstance resistance = entity.getStatusEffect(StatusEffects.RESISTANCE);
         if (resistance != null) {
             damage *= Math.max(0, 25 - (resistance.getAmplifier() + 1) * 5) / 25.0;
         }
 
-        // Enchantment protection (computed once per tick for the target).
-        damage *= 1.0 - protectionReduction;
+        // Enchantment protection (looked up once per entity per tick).
+        damage *= 1.0 - protectionCache.computeIfAbsent(
+                entity.getId(), id -> protectionReductionOf(entity, readEnchants, assumedProtection));
 
         return Math.max(0.0, damage);
+    }
+
+    private static double snap(double value) {
+        return Math.round(value * SNAP) / SNAP;
     }
 
     /**
