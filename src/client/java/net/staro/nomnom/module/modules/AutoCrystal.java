@@ -186,6 +186,7 @@ public class AutoCrystal extends NomnomModule {
         if (velocity.lengthSquared() > 1.0) {
             velocity = velocity.normalize();
         }
+
         lastTargetId = target.getId();
         lastTargetPos = position;
         Vec3d predicted = position.add(velocity.multiply(predict.getValue()));

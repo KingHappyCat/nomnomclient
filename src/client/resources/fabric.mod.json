@@ -1,11 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "nomnomclient",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "name": "nomnomclient",
   "description": "nomnomclient!",
-  "authors": [nomwe],
-  "contact": {},
+  "authors": ["nomwe"],
   "license": "All-Rights-Reserved",
   "environment": "client",
   "entrypoints": {},

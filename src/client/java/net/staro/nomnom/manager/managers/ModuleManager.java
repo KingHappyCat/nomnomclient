@@ -38,6 +38,8 @@ public class ModuleManager extends GenericManager<Module> implements Jsonable {
         register(new ESP(nomnom));
         register(new Tracers(nomnom));
         register(new Nametags(nomnom));
+        register(new ElytraFly(nomnom));
+        register(new HUD(nomnom));
     }
 
     @Override
