@@ -12,6 +12,7 @@
     "entity.MixinClientPlayerEntity",
     "network.MixinClientPlayNetworkHandler",
     "render.MixinCamera",
+    "render.MixinEntityRenderer",
     "render.MixinInGameOverlayRenderer",
     "render.MixinGameRenderer",
     "render.MixinBossBarHud",

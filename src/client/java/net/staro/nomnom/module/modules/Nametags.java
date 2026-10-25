@@ -14,10 +14,13 @@ import net.staro.nomnom.utility.ProjectionUtil;
 
 /**
  * Name, health and distance above entities, visible through walls.
- * Note: vanilla nametags are still drawn too; they can be hidden with a mixin later.
+ * The vanilla nametags of the entities drawn here are hidden (see MixinEntityRenderer).
  */
 @SuppressWarnings("unused")
 public class Nametags extends NomnomModule {
+    /** Handle for MixinEntityRenderer, which can't get module instances injected. */
+    public static Nametags INSTANCE;
+
     private final Setting<Boolean> players = bool("Players", true);
     private final Setting<Boolean> hostiles = bool("Hostiles", false);
     private final Setting<Boolean> passives = bool("Passives", false);
@@ -27,6 +30,15 @@ public class Nametags extends NomnomModule {
 
     public Nametags(Nomnom nomnom) {
         super(nomnom, "Nametags", Category.RENDER, "Name, health and distance above entities");
+        INSTANCE = this;
+    }
+
+    /** True if the vanilla nametag of {@code entity} should be hidden because we draw our own. */
+    public boolean hidesVanillaTag(Entity entity) {
+        return isEnabled()
+                && entity != null
+                && entity != mc.player
+                && EspUtil.wanted(entity, players.getValue(), hostiles.getValue(), passives.getValue());
     }
 
     @Listener
