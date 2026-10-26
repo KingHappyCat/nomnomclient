@@ -41,6 +41,7 @@ public class ModuleManager extends GenericManager<Module> implements Jsonable {
         register(new ElytraFly(nomnom));
         register(new HUD(nomnom));
         register(new FeetTrap(nomnom));
+        register(new SurroundBreak(nomnom));
     }
 
     @Override

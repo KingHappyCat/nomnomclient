@@ -129,7 +129,8 @@ public class BlockPlacer {
         }
     }
 
-    private void faceSilently(Vec3d point) {
+    /** Tells the server we are looking at {@code point}; undone by {@link #finish()}. */
+    public void faceSilently(Vec3d point) {
         Vec3d eye = mc.player.getEyePos();
         double dx = point.x - eye.x;
         double dy = point.y - eye.y;
