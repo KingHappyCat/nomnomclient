@@ -56,6 +56,9 @@ public class FeetTrap extends NomnomModule {
     // Place a block underneath first when there is nothing to click on.
     private final Setting<Boolean> support = bool("Support", true);
     // Use ender chests when you have no obsidian in the hotbar.
+    // Click on the empty spot itself when there is nothing to click on, instead of building a
+    // support block. Faster, but anticheats like Grim flag clicks on air.
+    private final Setting<Boolean> airPlace = bool("AirPlace", false);
     private final Setting<Boolean> enderChests = bool("EnderChests", true);
     private final Setting<Boolean> rotate = bool("Rotate", true);
     private final Setting<Double> range = precise("Range", 4.5, 2.0, 6.0);
@@ -151,6 +154,10 @@ public class FeetTrap extends NomnomModule {
             }
 
             BlockHitResult hit = placer.findHit(pos, eye, reach);
+
+            if (hit == null && airPlace.getValue()) {
+                hit = placer.airHit(pos, eye, reach);
+            }
 
             if (hit != null) {
                 positions.add(pos);

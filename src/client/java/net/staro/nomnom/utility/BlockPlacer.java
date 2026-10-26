@@ -73,6 +73,21 @@ public class BlockPlacer {
         return best;
     }
 
+    /**
+     * "Air place": a click on the empty position itself, for when there is no neighbouring
+     * block to click on. Vanilla servers accept it, but anticheats that look for clicks on air
+     * (Grim has one) flag it. Null if {@code pos} is out of reach.
+     */
+    public BlockHitResult airHit(BlockPos pos, Vec3d eye, double reach) {
+        Vec3d point = Vec3d.ofCenter(pos);
+
+        if (eye.squaredDistanceTo(point) > reach * reach) {
+            return null;
+        }
+
+        return new BlockHitResult(point, Direction.UP, pos, false);
+    }
+
     /** Runs {@code action} with the server's held slot switched to {@code slot}. */
     public void withSilentSlot(int slot, Runnable action) {
         int previousSlot = mc.player.getInventory().getSelectedSlot();
