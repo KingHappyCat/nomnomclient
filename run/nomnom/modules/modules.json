@@ -84,6 +84,7 @@
     "Bind": -1
   },
   "ClickGui": {
+    "CustomFont": "true",
     "Enabled": "false",
     "Drawn": "true",
     "Bind": 80
@@ -186,6 +187,7 @@
     "FPS": "true",
     "Totems and Crystals": "false",
     "Rainbow": "true",
+    "CustomFont": "true",
     "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
@@ -195,6 +197,7 @@
     "Height": "1",
     "Roof": "false",
     "Support": "false",
+    "AirPlace": "false",
     "EnderChests": "true",
     "Rotate": "true",
     "Range": "4.5",

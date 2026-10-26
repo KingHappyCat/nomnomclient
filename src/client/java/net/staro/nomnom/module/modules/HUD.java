@@ -5,6 +5,7 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.staro.nomnom.Nomnom;
@@ -12,6 +13,7 @@ import net.staro.nomnom.api.Module;
 import net.staro.nomnom.api.Setting;
 import net.staro.nomnom.api.event.listener.Listener;
 import net.staro.nomnom.events.render.Render2DEvent;
+import net.staro.nomnom.gui.GuiFont;
 import net.staro.nomnom.module.Category;
 import net.staro.nomnom.module.NomnomModule;
 
@@ -44,6 +46,8 @@ public class HUD extends NomnomModule {
     private final Setting<Boolean> fps = bool("FPS", true);
     private final Setting<Boolean> counters = bool("Totems and Crystals", true);
     private final Setting<Boolean> rainbow = bool("Rainbow", true);
+    // Draw the HUD in the bundled Huninn font instead of the Minecraft font.
+    private final Setting<Boolean> customFont = bool("CustomFont", true);
 
     private final String version;
 
@@ -69,7 +73,7 @@ public class HUD extends NomnomModule {
 
         if (watermark.getValue()) {
             String text = version.isEmpty() ? "nomnomclient" : "nomnomclient " + version;
-            context.drawTextWithShadow(font, text, MARGIN, MARGIN, accent(0));
+            context.drawTextWithShadow(font, label(text), MARGIN, MARGIN, accent(0));
         }
 
         if (moduleList.getValue()) {
@@ -92,12 +96,12 @@ public class HUD extends NomnomModule {
             names.add(module.getName());
         }
 
-        names.sort(Comparator.comparingInt((String name) -> font.getWidth(name)).reversed());
+        names.sort(Comparator.comparingInt((String name) -> width(font, name)).reversed());
 
         int y = MARGIN;
         for (int i = 0; i < names.size(); i++) {
             String name = names.get(i);
-            context.drawTextWithShadow(font, name, width - font.getWidth(name) - MARGIN, y, accent(i));
+            context.drawTextWithShadow(font, label(name), width - width(font, name) - MARGIN, y, accent(i));
             y += font.fontHeight + 1;
         }
     }
@@ -142,7 +146,11 @@ public class HUD extends NomnomModule {
         int y = height - MARGIN - font.fontHeight;
         for (int i = lines.size() - 1; i >= 0; i--) {
             String line = lines.get(i);
-            context.drawTextWithShadow(font, line, width - font.getWidth(line) - MARGIN, y, i == 0 && coordinates.getValue() ? WHITE : GREY);
+            // Rainbow when it's on, otherwise white for the coordinates and grey for the rest.
+            int color = rainbow.getValue()
+                    ? accent(i)
+                    : (i == 0 && coordinates.getValue() ? WHITE : GREY);
+            context.drawTextWithShadow(font, label(line), width - width(font, line) - MARGIN, y, color);
             y -= font.fontHeight + 1;
         }
     }
@@ -174,6 +182,15 @@ public class HUD extends NomnomModule {
         }
 
         return total;
+    }
+
+    /** Text in the font the HUD is set to use. */
+    private Text label(String value) {
+        return GuiFont.of(value, customFont.getValue());
+    }
+
+    private int width(TextRenderer font, String value) {
+        return font.getWidth(label(value));
     }
 
     /** Rainbow colour that shifts over time (and per line), or white when Rainbow is off. */

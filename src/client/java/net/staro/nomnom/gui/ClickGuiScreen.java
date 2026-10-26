@@ -9,6 +9,7 @@ import net.minecraft.text.Text;
 import net.staro.nomnom.api.Module;
 import net.staro.nomnom.api.trait.Nameable;
 import net.staro.nomnom.manager.managers.ModuleManager;
+import net.staro.nomnom.module.modules.ClickGui;
 import net.staro.nomnom.module.Category;
 import net.staro.nomnom.setting.GenericSetting;
 import net.staro.nomnom.setting.type.Bind;
@@ -78,6 +79,7 @@ public class ClickGuiScreen extends Screen {
     private final Set<Module> expanded = new HashSet<>();
 
     private final int panelWidth;
+    private final boolean customFont;
     private Panel draggingPanel;
     private IntConsumer activeDrag;
     private GenericSetting<?> listening;
@@ -86,6 +88,7 @@ public class ClickGuiScreen extends Screen {
         super(Text.literal("Nomnom Client"));
         this.owner = owner;
         this.moduleManager = moduleManager;
+        this.customFont = !(owner instanceof ClickGui gui) || gui.useCustomFont();
 
         List<Category> categories = moduleManager.getCategories();
         int categoryCount = Math.max(1, categories.size());
@@ -131,11 +134,11 @@ public class ClickGuiScreen extends Screen {
 
         if (listening != null) {
             String hint = "Bind: " + listening.getName() + "  |  Esc: cancel  |  Backspace: clear";
-            int hintWidth = textRenderer.getWidth(hint);
+            int hintWidth = textWidth(hint);
             int x = Math.max(4, (width - hintWidth) / 2);
             int y = Math.max(4, height - 18);
             ctx.fill(x - 5, y - 3, Math.min(width - 4, x + hintWidth + 5), y + 13, PANEL_BG);
-            ctx.drawTextWithShadow(textRenderer, hint, x, y, ACCENT);
+            ctx.drawTextWithShadow(textRenderer, label(hint), x, y, ACCENT);
         }
     }
 
@@ -348,18 +351,33 @@ public class ClickGuiScreen extends Screen {
         return Math.max(min, Math.min(max, value));
     }
 
+    /** Text in the font the ClickGUI is set to use. */
+    private Text label(String value) {
+        return GuiFont.of(value, customFont);
+    }
+
+    private int textWidth(String value) {
+        return textRenderer.getWidth(label(value));
+    }
+
     private void drawFit(DrawContext ctx, String original, int x, int y, int maxWidth, int color) {
         if (original == null || original.isEmpty() || maxWidth <= 0) return;
         String text = original;
-        if (textRenderer.getWidth(text) > maxWidth) {
+        if (textWidth(text) > maxWidth) {
+            // Cut characters off the end until the text plus an ellipsis fits.
             String suffix = "…";
-            text = textRenderer.trimToWidth(text, Math.max(0, maxWidth - textRenderer.getWidth(suffix))) + suffix;
+            int limit = Math.max(0, maxWidth - textWidth(suffix));
+            int length = text.length();
+            while (length > 0 && textWidth(text.substring(0, length)) > limit) {
+                length--;
+            }
+            text = text.substring(0, length) + suffix;
         }
-        ctx.drawTextWithShadow(textRenderer, text, x, y, color);
+        ctx.drawTextWithShadow(textRenderer, label(text), x, y, color);
     }
 
     private void drawRight(DrawContext ctx, String text, int right, int y, int color) {
-        ctx.drawTextWithShadow(textRenderer, text, right - textRenderer.getWidth(text), y, color);
+        ctx.drawTextWithShadow(textRenderer, label(text), right - textWidth(text), y, color);
     }
 
     private static void drawBorder(DrawContext ctx, int x, int y, int w, int h, int color) {
