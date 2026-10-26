@@ -50,7 +50,7 @@ showSubtitles:false
 directionalAudio:false
 touchscreen:false
 bobView:true
-toggleCrouch:false
+toggleCrouch:true
 toggleSprint:false
 toggleAttack:false
 toggleUse:false

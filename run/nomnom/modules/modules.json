@@ -67,7 +67,7 @@
   },
   "Step": {
     "Height": "3.3",
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
@@ -189,5 +189,18 @@
     "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
+  },
+  "FeetTrap": {
+    "BlocksPerTick": "4",
+    "Height": "1",
+    "Roof": "false",
+    "Support": "false",
+    "EnderChests": "true",
+    "Rotate": "true",
+    "Range": "4.5",
+    "DisableOnMove": "false",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": 86
   }
 }

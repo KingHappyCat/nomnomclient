@@ -1,0 +1,37 @@
+{
+  "stats": {
+    "minecraft:killed": {
+      "minecraft:warden": 2,
+      "minecraft:player": 1
+    },
+    "minecraft:used": {
+      "minecraft:end_crystal": 111,
+      "minecraft:obsidian": 286
+    },
+    "minecraft:mined": {
+      "minecraft:short_grass": 2
+    },
+    "minecraft:killed_by": {
+      "minecraft:player": 1
+    },
+    "minecraft:custom": {
+      "minecraft:time_since_rest": 2257,
+      "minecraft:walk_one_cm": 6022,
+      "minecraft:leave_game": 1,
+      "minecraft:mob_kills": 2,
+      "minecraft:damage_taken": 415,
+      "minecraft:play_time": 5783,
+      "minecraft:jump": 104,
+      "minecraft:time_since_death": 2233,
+      "minecraft:sprint_one_cm": 2513,
+      "minecraft:fall_one_cm": 1100,
+      "minecraft:total_world_time": 6525,
+      "minecraft:fly_one_cm": 2770,
+      "minecraft:walk_on_water_one_cm": 695,
+      "minecraft:crouch_one_cm": 900,
+      "minecraft:sneak_time": 511,
+      "minecraft:deaths": 1
+    }
+  },
+  "DataVersion": 4671
+}
