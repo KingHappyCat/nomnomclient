@@ -34,6 +34,7 @@
     "SelfPredict": "1",
     "FriendSafe": "true",
     "MaxFriendDamage": "2.0",
+    "PreArm": "true",
     "ObsidianBase": "true",
     "HitWindow": "true",
     "DoublePop": "true",
@@ -205,5 +206,20 @@
     "Enabled": "false",
     "Drawn": "true",
     "Bind": 86
+  },
+  "SurroundBreak": {
+    "Mode": "LEGIT",
+    "Range": "4.5",
+    "TargetRange": "8",
+    "Pickaxe": "true",
+    "Rotate": "true",
+    "Walls": "true",
+    "OnlyEnclosed": "true",
+    "RequireBase": "true",
+    "MinDistance": "2.5",
+    "Debug": "false",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
   }
 }

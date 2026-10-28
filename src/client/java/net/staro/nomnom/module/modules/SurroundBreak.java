@@ -72,6 +72,9 @@ public class SurroundBreak extends NomnomModule {
     private final Setting<Double> minDistance = precise("MinDistance", 2.5, 1.0, 6.0);
     private final Setting<Boolean> debug = bool("Debug", false);
 
+    /** Handle for AutoCrystal, which reads {@link #opening()}. */
+    public static SurroundBreak INSTANCE;
+
     private final BlockPlacer placer;
 
     private BlockPos miningPos;
@@ -86,6 +89,21 @@ public class SurroundBreak extends NomnomModule {
     public SurroundBreak(Nomnom nomnom) {
         super(nomnom, "SurroundBreak", Category.COMBAT, "Mines a block out of the target's surround");
         this.placer = new BlockPlacer(mc);
+        INSTANCE = this;
+    }
+
+    /**
+     * The block whose finish packet has been sent and that the server should have broken, or
+     * null. AutoCrystal uses it to place a crystal on the spot before our own client has seen
+     * the block disappear.
+     */
+    public BlockPos opening() {
+        return isEnabled() && miningPos != null && finishSent ? miningPos : null;
+    }
+
+    /** Tick on which {@link #opening()} was sent, to tell one opening from the next. */
+    public long openingSince() {
+        return finishTick;
     }
 
     @Override

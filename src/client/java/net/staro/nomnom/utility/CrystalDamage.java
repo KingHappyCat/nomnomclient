@@ -12,7 +12,9 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -20,6 +22,7 @@ import net.minecraft.world.RaycastContext;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * End crystal damage, following the vanilla explosion formula: distance falloff, exposure,
@@ -54,6 +57,7 @@ public class CrystalDamage {
     private final Map<ExposureKey, Float> exposureCache = new HashMap<>();
     private final Map<Integer, Double> protectionCache = new HashMap<>();
     private long cacheStartTick = -1;
+    private BlockPos ignoredBlock;
     private boolean readEnchants = true;
     private int assumedProtection = 16;
 
@@ -75,7 +79,20 @@ public class CrystalDamage {
         }
     }
 
+    /**
+     * Pretends the block at {@code pos} is already gone when working out exposure, or null for
+     * the real world. Used to judge a crystal on a spot that is about to be mined out: the
+     * block would otherwise swallow every ray, because the explosion centre is inside it.
+     */
+    public void setIgnoredBlock(BlockPos pos) {
+        if (!Objects.equals(ignoredBlock, pos)) {
+            ignoredBlock = pos == null ? null : pos.toImmutable();
+            exposureCache.clear();
+        }
+    }
+
     public void reset() {
+        ignoredBlock = null;
         exposureCache.clear();
         protectionCache.clear();
         cacheStartTick = -1;
@@ -220,7 +237,7 @@ public class CrystalDamage {
                             MathHelper.lerp(z, box.minZ, box.maxZ) + offsetZ
                     );
 
-                    HitResult hit = mc.world.raycast(new RaycastContext(
+                    BlockHitResult hit = mc.world.raycast(new RaycastContext(
                             point,
                             source,
                             RaycastContext.ShapeType.COLLIDER,
@@ -228,7 +245,10 @@ public class CrystalDamage {
                             entity
                     ));
 
-                    if (hit.getType() == HitResult.Type.MISS) {
+                    // A ray that first meets the ignored block has nothing in front of it: it
+                    // ends inside that block.
+                    if (hit.getType() == HitResult.Type.MISS
+                            || (ignoredBlock != null && hit.getBlockPos().equals(ignoredBlock))) {
                         reached++;
                     }
 

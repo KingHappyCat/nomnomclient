@@ -140,6 +140,14 @@ public class AutoCrystal extends NomnomModule {
     private final Setting<Boolean> friendSafe = bool("FriendSafe", true);
     private final Setting<Double> maxFriendDamage = precise("MaxFriendDamage", 2.0, 0.0, 20.0);
 
+    // --- SurroundBreak ---
+    // When SurroundBreak has just sent the packet that finishes a surround block, place a
+    // crystal on that spot straight away, in the same tick. The server breaks the block before
+    // it reads the placement, so this saves the round trip it takes our client to see the block
+    // gone. The spot is checked as if the block were already air (damage to the target, damage
+    // to you, friends).
+    private final Setting<Boolean> preArm = bool("PreArm", true);
+
     // --- Obsidian ---
     // When no valid crystal spot exists, place an obsidian base (needs obsidian in the hotbar)
     // on the best spot and crystal it on the following tick.
@@ -214,6 +222,7 @@ public class AutoCrystal extends NomnomModule {
     private final Map<BlockPos, Long> recentPlacements = new HashMap<>();
 
     private Context lastContext;
+    private long preArmedSince = -1;
     private long tickCounter;
     private long lastRestockTick = -100;
     private long lastObsidianTick = -100;
@@ -374,6 +383,10 @@ public class AutoCrystal extends NomnomModule {
         }
 
         if (autoPlace.getValue()) {
+            if (preArm.getValue()) {
+                preArm(context);
+            }
+
             placeCrystals(context);
         }
     }
@@ -651,6 +664,11 @@ public class AutoCrystal extends NomnomModule {
             return;
         }
 
+        placeSpots(chosen, offhandCrystal, crystalSlot);
+    }
+
+    /** Sends the placements for {@code chosen}, with one silent slot switch for all of them. */
+    private void placeSpots(List<Spot> chosen, boolean offhandCrystal, int crystalSlot) {
         Hand hand = offhandCrystal ? Hand.OFF_HAND : Hand.MAIN_HAND;
 
         Runnable placeAll = () -> {
@@ -675,6 +693,67 @@ public class AutoCrystal extends NomnomModule {
         }
 
         pruneMemory(recentPlacements);
+    }
+
+    /**
+     * Places a crystal on the floor of the surround block SurroundBreak is finishing, once per
+     * block. If the server refuses to break the block the placement just fails.
+     */
+    private void preArm(Context context) {
+        SurroundBreak miner = SurroundBreak.INSTANCE;
+        BlockPos opening = miner == null ? null : miner.opening();
+
+        if (opening == null || miner.openingSince() == preArmedSince) {
+            return;
+        }
+
+        BlockPos base = opening.down();
+        var floor = mc.world.getBlockState(base);
+
+        if (!floor.isOf(Blocks.OBSIDIAN) && !floor.isOf(Blocks.BEDROCK)) {
+            return;
+        }
+
+        boolean offhandCrystal = mc.player.getOffHandStack().isOf(Items.END_CRYSTAL);
+        int crystalSlot = findHotbarSlot(Items.END_CRYSTAL);
+
+        if (!offhandCrystal && crystalSlot == -1) {
+            return;
+        }
+
+        // Judge the spot as if the block were already gone.
+        Vec3d centre = new Vec3d(opening.getX() + 0.5, opening.getY(), opening.getZ() + 0.5);
+        calculator.setIgnoredBlock(opening);
+
+        try {
+            double damage = calculator.damage(context.primary(), context.primaryPosition(), centre);
+
+            if (damage < context.required()) {
+                return;
+            }
+
+            boolean lethal = damage >= context.healthTotal();
+            double self = selfChecking()
+                    ? calculator.damage(mc.player, context.selfPosition(), centre)
+                    : 0.0;
+
+            if (!selfSafe(context, self, lethal) || !friendsSafe(context, centre)) {
+                return;
+            }
+
+            Spot spot = new Spot();
+            spot.base = base.toImmutable();
+            spot.centre = centre;
+            spot.damage = damage;
+            spot.self = self;
+            spot.lethal = lethal;
+
+            preArmedSince = miner.openingSince();
+            debugMessage("Pre-arming " + opening.toShortString());
+            placeSpots(List.of(spot), offhandCrystal, crystalSlot);
+        } finally {
+            calculator.setIgnoredBlock(null);
+        }
     }
 
     /** Places one obsidian block where a crystal on top of it would be best. */
