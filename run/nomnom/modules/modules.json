@@ -48,10 +48,10 @@
   "Speed": {
     "Mode": "BHOP",
     "Speed": "5.0",
-    "Ground Check": "true",
+    "Ground Check": "false",
     "Enabled": "true",
     "Drawn": "true",
-    "Bind": -1
+    "Bind": 88
   },
   "NoRender": {
     "Fire": "true",
@@ -226,12 +226,6 @@
     "Mode": "STRICT",
     "OnlyOnGround": "true",
     "Enabled": "false",
-    "Drawn": "true",
-    "Bind": -1
-  },
-  "NoSlow": {
-    "Items": "true",
-    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },

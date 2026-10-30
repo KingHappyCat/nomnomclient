@@ -21,7 +21,7 @@ public class Speed extends NomnomModule {
     private static final double BASE_SPEED = 0.2873; // vanilla sprint speed, blocks per tick
 
     private final Setting<Mode> mode = enumSetting("Mode", Mode.STRAFE);
-    private final Setting<Float> speed = floating("Speed", 1.5f, 1.0f, 5.0f);
+    private final Setting<Float> speed = floating("Speed", 1.5f, 1.0f, 10.0f);
     private final Setting<Boolean> groundCheck = bool("Ground Check", true);
 
     public Speed(Nomnom nomnom) {

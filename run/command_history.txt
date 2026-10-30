@@ -1,7 +1,3 @@
-/gamemode creative
-/gamemode creative Player635
-/enchant Player635 minecraft:sharpness 5
-/enchant Player523 minecraft:sharpness 5
 /summon minecraft:warden
 /time set day
 /summon minecraft:warden
@@ -47,4 +43,8 @@
 /STATS
 /stats
 /register shanti67 shanti67
+/kill
+/home
+/kill
+/tpa Regusons
 /kill
