@@ -1,0 +1,39 @@
+{
+  "stats": {
+    "minecraft:mined": {
+      "minecraft:obsidian": 2
+    },
+    "minecraft:picked_up": {
+      "minecraft:spruce_sapling": 1,
+      "minecraft:totem_of_undying": 3
+    },
+    "minecraft:custom": {
+      "minecraft:damage_resisted": 2200,
+      "minecraft:time_since_rest": 10647,
+      "minecraft:walk_one_cm": 16377,
+      "minecraft:leave_game": 1,
+      "minecraft:damage_taken": 157,
+      "minecraft:play_time": 10647,
+      "minecraft:jump": 1980,
+      "minecraft:time_since_death": 10647,
+      "minecraft:drop": 5,
+      "minecraft:sprint_one_cm": 602,
+      "minecraft:total_world_time": 11428,
+      "minecraft:fly_one_cm": 13976,
+      "minecraft:crouch_one_cm": 32,
+      "minecraft:sneak_time": 191
+    },
+    "minecraft:dropped": {
+      "minecraft:totem_of_undying": 3,
+      "minecraft:end_crystal": 1,
+      "minecraft:cobweb": 1
+    },
+    "minecraft:used": {
+      "minecraft:cobweb": 10,
+      "minecraft:end_crystal": 2202,
+      "minecraft:netherite_pickaxe": 2,
+      "minecraft:obsidian": 25
+    }
+  },
+  "DataVersion": 4671
+}

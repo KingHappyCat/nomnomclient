@@ -1,6 +1,6 @@
-[15:48:18] [main/WARN] (FabricLoader/Knot) Class path entries reference missing files: /Users/nomwe/Documents/nomnomclient/build/resources/main - the game may not load properly!
-[15:48:18] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.11 with Fabric Loader 0.19.5
-[15:48:18] [main/INFO] (FabricLoader) Loading 51 mods:
+[10:31:27] [main/WARN] (FabricLoader/Knot) Class path entries reference missing files: /Users/nomwe/Documents/nomnomclient/build/resources/main - the game may not load properly!
+[10:31:27] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.11 with Fabric Loader 0.19.5
+[10:31:28] [main/INFO] (FabricLoader) Loading 51 mods:
 	- fabric-api 0.141.6+1.21.11
 	- fabric-api-base 1.0.5+4ebb5c083e
 	- fabric-api-lookup-api-v1 1.6.114+20dc27073e
@@ -52,16 +52,17 @@
 	- minecraft 1.21.11
 	- mixinextras 0.5.5
 	- nomnomclient 1.5.7
-[15:48:18] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/Users/nomwe/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.4+mixin.0.8.7/5f66cc9f59b8efaa942155a3d5a30599bf6640dd/sponge-mixin-0.17.4+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[15:48:18] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[15:48:19] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
-[15:48:19] [main/INFO] (PreClientInitializer) NOMNOM_PRE_LAUNCH_START
-[15:48:19] [main/INFO] (PreClientInitializer) NOMNOM_PRE_LAUNCH_FINISH
-[15:48:21] [Datafixer Bootstrap/INFO] (Minecraft) 287 Datafixer optimizations took 450 milliseconds
-[15:48:30] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[15:48:30] [Render thread/INFO] (Minecraft) Setting user: Player735
-[15:48:30] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[15:48:30] [Download-2/ERROR] (Minecraft) Failed to fetch user properties
+[10:31:28] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/Users/nomwe/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.17.4+mixin.0.8.7/5f66cc9f59b8efaa942155a3d5a30599bf6640dd/sponge-mixin-0.17.4+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[10:31:28] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[10:31:29] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.5).
+[10:31:30] [main/INFO] (PreClientInitializer) NOMNOM_PRE_LAUNCH_START
+[10:31:30] [main/INFO] (PreClientInitializer) NOMNOM_PRE_LAUNCH_FINISH
+[10:31:33] [Datafixer Bootstrap/INFO] (Minecraft) 287 Datafixer optimizations took 674 milliseconds
+[10:31:42] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[10:31:42] [Render thread/INFO] (Minecraft) Setting user: nomwe67
+[10:31:43] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[10:31:44] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
+[10:31:44] [Download-2/ERROR] (Minecraft) Failed to fetch user properties
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at knot//com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:59)
 	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:150)
@@ -75,11 +76,10 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:56)
 	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:121)
 	... 5 more
-[15:48:31] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
-[15:48:33] [Render thread/INFO] (Minecraft) [STDERR]: [LWJGL] [ThreadLocalUtil] Unsupported JNI version detected, this may result in a crash. Please inform LWJGL developers.
-[15:48:33] [Render thread/INFO] (Minecraft) Using optional rendering extensions: GL_EXT_texture_filter_anisotropic
-[15:48:34] [Download-1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[15:48:34] [Download-1/ERROR] (Minecraft) Failed to fetch Realms feature flags
+[10:31:45] [Render thread/INFO] (Minecraft) [STDERR]: [LWJGL] [ThreadLocalUtil] Unsupported JNI version detected, this may result in a crash. Please inform LWJGL developers.
+[10:31:45] [Render thread/INFO] (Minecraft) Using optional rendering extensions: GL_EXT_texture_filter_anisotropic
+[10:31:47] [Download-1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[10:31:47] [Download-1/ERROR] (Minecraft) Failed to fetch Realms feature flags
 net.minecraft.client.realms.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC'
 	at knot//net.minecraft.client.realms.RealmsClient.execute(RealmsClient.java:526)
 	at knot//net.minecraft.client.realms.RealmsClient.fetchFeatureFlags(RealmsClient.java:186)
@@ -87,99 +87,99 @@ net.minecraft.client.realms.exception.RealmsServiceException: Realms authenticat
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[15:48:35] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-client-gametest-api-v1, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, nomnomclient
-[15:48:35] [Render thread/ERROR] (ModNioPackResources) Invalid path in mod resource-pack nomnomclient: nomnom:font/OFL-Huninn.txt, ignoring
-[15:48:35] [Render thread/INFO] (NomnomClient) NOMNOM_LAUNCH_START
-[15:48:35] [Render thread/INFO] (NomnomClient) NOMNOM_LAUNCH_FINISH
-[15:48:36] [Worker-Main-5/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
-[15:48:36] [Worker-Main-6/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
-[15:48:36] [Worker-Main-7/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/animate_sprite and FS minecraft:core/animate_sprite_blit. Log output: WARNING: Output of vertex shader 'fAnimationProgress' not read by fragment shader
+[10:31:48] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-client-gametest-api-v1, fabric-command-api-v2, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-resource-loader-v1, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-serialization-api-v1, fabric-sound-api-v1, fabric-tag-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, nomnomclient
+[10:31:48] [Render thread/ERROR] (ModNioPackResources) Invalid path in mod resource-pack nomnomclient: nomnom:font/OFL-Huninn.txt, ignoring
+[10:31:48] [Render thread/INFO] (NomnomClient) NOMNOM_LAUNCH_START
+[10:31:49] [Render thread/INFO] (NomnomClient) NOMNOM_LAUNCH_FINISH
+[10:31:50] [Worker-Main-3/INFO] (Minecraft) Found unifont_all_no_pua-17.0.01.hex, loading
+[10:31:50] [Worker-Main-5/INFO] (Minecraft) Found unifont_pua-17.0.01.hex, loading
+[10:31:50] [Worker-Main-5/INFO] (Minecraft) Found unifont_jp_patch-17.0.01.hex, loading
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_text_intensity_see_through and FS minecraft:core/rendertype_text_intensity_see_through. Log output: WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_entity_shadow and FS minecraft:core/rendertype_entity_shadow. Log output: WARNING: Could not find vertex shader attribute 'UV1' to match BindAttributeLocation request.
-WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
-WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_text_background_see_through and FS minecraft:core/rendertype_text_background_see_through. Log output: WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/terrain and FS minecraft:core/terrain. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_crumbling and FS minecraft:core/rendertype_crumbling. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_text_background_see_through and FS minecraft:core/rendertype_text_background_see_through. Log output: WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_crumbling and FS minecraft:core/rendertype_crumbling. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
 WARNING: Output of vertex shader 'texCoord2' not read by fragment shader
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/block and FS minecraft:core/block. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/terrain and FS minecraft:core/terrain. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/terrain and FS minecraft:core/terrain. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/terrain and FS minecraft:core/terrain. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_beacon_beam and FS minecraft:core/rendertype_beacon_beam. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
-WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_translucent_moving_block and FS minecraft:core/rendertype_translucent_moving_block. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_text_see_through and FS minecraft:core/rendertype_text_see_through. Log output: WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_item_entity_translucent_cull and FS minecraft:core/rendertype_item_entity_translucent_cull. Log output: WARNING: Output of vertex shader 'texCoord1' not read by fragment shader
-WARNING: Output of vertex shader 'texCoord2' not read by fragment shader
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/block and FS minecraft:core/block. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/block and FS minecraft:core/block. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_text_intensity_see_through and FS minecraft:core/rendertype_text_intensity_see_through. Log output: WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_entity_alpha and FS minecraft:core/rendertype_entity_alpha. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_entity_alpha and FS minecraft:core/rendertype_entity_alpha. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
 WARNING: Output of vertex shader 'texCoord1' not read by fragment shader
 WARNING: Output of vertex shader 'texCoord2' not read by fragment shader
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/terrain and FS minecraft:core/terrain. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_beacon_beam and FS minecraft:core/rendertype_beacon_beam. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/terrain and FS minecraft:core/terrain. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/block and FS minecraft:core/block. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/animate_sprite and FS minecraft:core/animate_sprite_blit. Log output: WARNING: Output of vertex shader 'fAnimationProgress' not read by fragment shader
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_item_entity_translucent_cull and FS minecraft:core/rendertype_item_entity_translucent_cull. Log output: WARNING: Output of vertex shader 'texCoord1' not read by fragment shader
+WARNING: Output of vertex shader 'texCoord2' not read by fragment shader
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/block and FS minecraft:core/block. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_translucent_moving_block and FS minecraft:core/rendertype_translucent_moving_block. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_beacon_beam and FS minecraft:core/rendertype_beacon_beam. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/terrain and FS minecraft:core/terrain. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_entity_shadow and FS minecraft:core/rendertype_entity_shadow. Log output: WARNING: Could not find vertex shader attribute 'UV1' to match BindAttributeLocation request.
+WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_text_see_through and FS minecraft:core/rendertype_text_see_through. Log output: WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
+
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
 WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
 WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/terrain and FS minecraft:core/terrain. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/terrain and FS minecraft:core/terrain. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/terrain and FS minecraft:core/terrain. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/block and FS minecraft:core/block. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
-WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
 
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/rendertype_beacon_beam and FS minecraft:core/rendertype_beacon_beam. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
-WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
-
-[15:48:37] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
+[10:31:53] [Render thread/INFO] (Minecraft) Info log when linking program containing VS minecraft:core/entity and FS minecraft:core/entity. Log output: WARNING: Could not find vertex shader attribute 'Normal' to match BindAttributeLocation request.
 WARNING: Could not find vertex shader attribute 'UV2' to match BindAttributeLocation request.
 WARNING: Output of vertex shader 'overlayColor' not read by fragment shader
 
-[15:48:38] [Render thread/INFO] (Minecraft) OpenAL initialized on device MacBook Pro Speakers
-[15:48:38] [Render thread/INFO] (Minecraft) Sound engine started
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 1024x1024x2 minecraft:textures/atlas/blocks.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/beds.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/signs.png-atlas
-[15:48:38] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
-[15:48:39] [IO-Worker-1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[15:48:39] [IO-Worker-1/ERROR] (Minecraft) Couldn't connect to realms
+[10:31:54] [Render thread/INFO] (Minecraft) OpenAL initialized on device MacBook Pro Speakers
+[10:31:54] [Render thread/INFO] (Minecraft) Sound engine started
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/decorated_pot.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 1024x1024x2 minecraft:textures/atlas/blocks.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/chest.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/celestials.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/beds.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/items.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/signs.png-atlas
+[10:31:54] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[10:31:56] [IO-Worker-1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[10:31:56] [IO-Worker-1/ERROR] (Minecraft) Couldn't connect to realms
 net.minecraft.client.realms.exception.RealmsServiceException: Realms authentication error with message 'java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC'
 	at knot//net.minecraft.client.realms.RealmsClient.execute(RealmsClient.java:526)
 	at knot//net.minecraft.client.realms.RealmsClient.clientCompatible(RealmsClient.java:307)
@@ -188,4 +188,1402 @@ net.minecraft.client.realms.exception.RealmsServiceException: Realms authenticat
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
-[15:51:53] [Render thread/INFO] (Minecraft) Stopping!
+[10:34:32] [Render thread/INFO] (Minecraft) Loaded 1470 recipes
+[10:34:32] [Render thread/INFO] (Minecraft) Loaded 1584 advancements
+[10:34:33] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 65 new biomes in 2.022 ms
+[10:34:33] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.21.11
+[10:34:33] [Server thread/INFO] (Minecraft) Generating keypair
+[10:34:34] [Server thread/INFO] (Minecraft) Loading 0 persistent chunks...
+[10:34:34] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[10:34:35] [Server thread/INFO] (Minecraft) Loading 49 chunks for player spawn...
+[10:34:35] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[10:34:35] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[10:34:35] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[10:34:36] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[10:34:36] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[10:34:37] [Server thread/INFO] (Minecraft) Preparing spawn area: 16%
+[10:34:37] [Server thread/INFO] (Minecraft) Time elapsed: 3330 ms
+[10:34:37] [Server thread/INFO] (Minecraft) nomwe67[local:E:8b98523b] logged in with entity id 57 at (-76.08381284010488, 64.49520087700593, 97.09728610685261)
+[10:34:38] [Server thread/INFO] (Minecraft) nomwe67 joined the game
+[10:34:38] [Server thread/INFO] (Minecraft) nomwe67 has made the advancement [Ice Bucket Challenge]
+[10:34:38] [Server thread/INFO] (Minecraft) Changing view distance to 8, from 10
+[10:34:38] [Server thread/INFO] (Minecraft) Changing simulation distance to 6, from 0
+[10:34:38] [Render thread/INFO] (Minecraft) [System] [CHAT] nomwe67 has made the advancement [Ice Bucket Challenge]
+[10:34:38] [Render thread/INFO] (Minecraft) Loaded 13 advancements
+[10:34:38] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 2 reached during a single frame. New capacity will be 4.
+[10:34:38] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 4 reached during a single frame. New capacity will be 8.
+[10:34:39] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 2 reached during a single frame. New capacity will be 8.
+[10:34:39] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[10:34:39] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 8 reached during a single frame. New capacity will be 16.
+[10:34:39] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
+[10:34:39] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 32 reached during a single frame. New capacity will be 64.
+[10:34:40] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 64 reached during a single frame. New capacity will be 128.
+[10:34:42] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 128 reached during a single frame. New capacity will be 256.
+[10:34:43] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 2082ms or 41 ticks behind
+[10:34:47] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 256 reached during a single frame. New capacity will be 512.
+[10:36:05] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 512 reached during a single frame. New capacity will be 1024.
+[10:37:03] [Server thread/INFO] (Minecraft) [nomwe67: Set own game mode to Survival Mode]
+[10:37:03] [Render thread/INFO] (Minecraft) [System] [CHAT] Set own game mode to Survival Mode
+[10:37:06] [Server thread/INFO] (Minecraft) [nomwe67: Set own game mode to Spectator Mode]
+[10:37:06] [Render thread/INFO] (Minecraft) [System] [CHAT] Set own game mode to Spectator Mode
+[10:37:09] [Render thread/INFO] (Minecraft) Resizing Chunk Sections UBO, capacity limit of 1024 reached during a single frame. New capacity will be 2048.
+[10:37:25] [Server thread/INFO] (Minecraft) [nomwe67: Set own game mode to Survival Mode]
+[10:37:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Set own game mode to Survival Mode
+[10:37:29] [Server thread/INFO] (Minecraft) [nomwe67: Set own game mode to Creative Mode]
+[10:37:29] [Render thread/INFO] (Minecraft) [System] [CHAT] Set own game mode to Creative Mode
+[10:38:28] [Render thread/INFO] (Minecraft) Loaded 14 advancements
+[10:39:14] [Server thread/INFO] (Minecraft) nomwe67 has completed the challenge [Cover Me in Debris]
+[10:39:14] [Render thread/INFO] (Minecraft) [System] [CHAT] nomwe67 has completed the challenge [Cover Me in Debris]
+[10:39:14] [Render thread/INFO] (Minecraft) Loaded 17 advancements
+[10:39:23] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Blast Protection IV to nomwe67's item]
+[10:39:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Blast Protection IV to nomwe67's item
+[10:39:25] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Blast Protection IV to nomwe67's item]
+[10:39:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Blast Protection IV to nomwe67's item
+[10:39:27] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Blast Protection IV to nomwe67's item]
+[10:39:27] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Blast Protection IV to nomwe67's item
+[10:39:27] [Render thread/INFO] (Minecraft) Resizing Dynamic Transforms UBO, capacity limit of 16 reached during a single frame. New capacity will be 32.
+[10:39:30] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Blast Protection IV to nomwe67's item]
+[10:39:30] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Blast Protection IV to nomwe67's item
+[10:39:34] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Mending to nomwe67's item]
+[10:39:34] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Mending to nomwe67's item
+[10:39:37] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Mending to nomwe67's item]
+[10:39:37] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Mending to nomwe67's item
+[10:39:38] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Mending to nomwe67's item]
+[10:39:38] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Mending to nomwe67's item
+[10:39:39] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Mending to nomwe67's item]
+[10:39:39] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Mending to nomwe67's item
+[10:39:45] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Unbreaking III to nomwe67's item]
+[10:39:45] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Unbreaking III to nomwe67's item
+[10:39:47] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Unbreaking III to nomwe67's item]
+[10:39:47] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Unbreaking III to nomwe67's item
+[10:39:48] [Server thread/INFO] (Minecraft) [nomwe67: Applied enchantment Unbreaking III to nomwe67's item]
+[10:39:48] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied enchantment Unbreaking III to nomwe67's item
+[10:39:55] [Server thread/INFO] (Minecraft) [nomwe67: Set own game mode to Survival Mode]
+[10:39:55] [Render thread/INFO] (Minecraft) [System] [CHAT] Set own game mode to Survival Mode
+[10:40:43] [Server thread/INFO] (Minecraft) [nomwe67: Set own game mode to Creative Mode]
+[10:40:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Set own game mode to Creative Mode
+[10:42:06] [Server thread/INFO] (Minecraft) [nomwe67: Set own game mode to Survival Mode]
+[10:42:06] [Render thread/INFO] (Minecraft) [System] [CHAT] Set own game mode to Survival Mode
+[10:42:34] [Server thread/INFO] (Minecraft) [nomwe67: Applied effect Resistance to nomwe67]
+[10:42:34] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied effect Resistance to nomwe67
+[10:43:04] [Server thread/INFO] (Minecraft) [nomwe67: Applied effect Saturation to nomwe67]
+[10:43:04] [Render thread/INFO] (Minecraft) [System] [CHAT] Applied effect Saturation to nomwe67
+[10:43:25] [Server thread/WARN] (Minecraft) Mismatch in destroy block pos: BlockPos{x=-130, y=-4, z=86} BlockPos{x=-130, y=-4, z=88}
+[10:43:32] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[10:43:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[10:43:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[10:43:32] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[10:44:11] [Server thread/INFO] (Minecraft) nomwe67 lost connection: Disconnected
+[10:44:11] [Server thread/INFO] (Minecraft) nomwe67 left the game
+[10:44:11] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[10:44:11] [Server thread/INFO] (Minecraft) Stopping server
+[10:44:11] [Server thread/INFO] (Minecraft) Saving players
+[10:44:11] [Server thread/INFO] (Minecraft) Saving worlds
+[10:44:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[10:44:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[10:44:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[10:44:11] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World (3)): All chunks are saved
+[10:44:11] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[10:44:11] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[10:44:11] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[10:44:18] [Render thread/INFO] (Minecraft) Deleting level New World (2)
+[10:44:18] [Render thread/INFO] (Minecraft) Attempt 1...
+[10:44:20] [Render thread/INFO] (Minecraft) Deleting level New World (1)
+[10:44:20] [Render thread/INFO] (Minecraft) Attempt 1...
+[10:44:23] [Render thread/INFO] (Minecraft) Deleting level New World
+[10:44:23] [Render thread/INFO] (Minecraft) Attempt 1...
+[10:45:36] [Render thread/INFO] (Minecraft) Connecting to hey.twerion.net, 25565
+[10:45:36] [Download-5/ERROR] (Minecraft) Failed to retrieve profile key pair
+com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 401
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:103)
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.post(MinecraftClient.java:64)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.getKeyPair(YggdrasilUserApiService.java:61)
+	at knot//net.minecraft.client.session.ProfileKeysImpl.fetchKeyPair(ProfileKeysImpl.java:128)
+	at knot//net.minecraft.client.session.ProfileKeysImpl.method_44291(ProfileKeysImpl.java:77)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+[10:45:47] [Render thread/INFO] (Minecraft) Connecting to hey.twerion.net, 25565
+[10:45:47] [Download-5/ERROR] (Minecraft) Failed to retrieve profile key pair
+com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 401
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:103)
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.post(MinecraftClient.java:64)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.getKeyPair(YggdrasilUserApiService.java:61)
+	at knot//net.minecraft.client.session.ProfileKeysImpl.fetchKeyPair(ProfileKeysImpl.java:128)
+	at knot//net.minecraft.client.session.ProfileKeysImpl.method_44291(ProfileKeysImpl.java:77)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+[10:45:49] [Render thread/INFO] (Minecraft) [System] [CHAT] \n████████\n████████  Welcome to Twerion, nomwe67!\n████████\n████████  Forum: forum.twerion.net\n████████  TeamSpeak: twerion.net\n████████  Shop: shop.twerion.net\n████████  Discord: twerion.net/discord\n████████
+[10:45:49] [Render thread/INFO] (Minecraft) [System] [CHAT] Friends » There are none of your 0 friends online.
+[10:45:49] [Render thread/INFO] (Minecraft) [System] [CHAT] Friends » You have one pending friend request.
+[10:45:49] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 0cb18699-56cc-3fb8-b8e2-66ea9f854a03 ([UPDATE_GAME_MODE])
+[10:45:53] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 53909932-f794-33c0-9329-948045a4c1ce ([UPDATE_GAME_MODE])
+[10:46:03] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 247bd5f9-a917-3853-bce4-298cab5b485f ([UPDATE_GAME_MODE])
+[10:46:03] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player ddea6853-eb42-3037-bc36-4950480cdd4f ([UPDATE_GAME_MODE])
+[10:46:08] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player fbe31fcb-9233-326d-b1af-75990c43f812 ([UPDATE_GAME_MODE])
+[10:46:08] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player fbe31fcb-9233-326d-b1af-75990c43f812 ([UPDATE_GAME_MODE])
+[10:46:09] [Render thread/INFO] (Minecraft) [System] [CHAT] Twerion » You have been logged in!
+[10:46:10] [Render thread/INFO] (Minecraft) [System] [CHAT] \n████████\n████████  Welcome to Twerion, nomwe67!\n████████\n████████  Forum: forum.twerion.net\n████████  TeamSpeak: twerion.net\n████████  Shop: shop.twerion.net\n████████  Discord: twerion.net/discord\n████████
+[10:46:10] [Render thread/INFO] (Minecraft) [System] [CHAT] Friends » There are none of your 0 friends online.
+[10:46:10] [Render thread/INFO] (Minecraft) [System] [CHAT] Friends » You have one pending friend request.
+[10:46:12] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 7a27dbb5-e5b3-327a-9226-d8309f2c6cf9 ([UPDATE_GAME_MODE])
+[10:46:17] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player c6797a38-a383-4121-adbb-d72b29a927fd ([UPDATE_GAME_MODE])
+[10:46:19] [Render thread/INFO] (Minecraft) [System] [CHAT] Twerion » Friends - Usage (10):\n» /friend add <player> - Seek friends\n» /friend deny <player> - Reject requests\n» /friend denyAll - Reject all requests\n» /friend acceptAll - Accept all requests\n» /friend list - List your friends\n» /friend remove <player> - End a friendship\n» /friend status <message> - Change your status\n» /friend relation <friend> <status> - Change your relation\n» /friend jump <player> - Jump on you friend's server\n» /friend accept <player> - Make friends
+[10:46:19] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 53909932-f794-33c0-9329-948045a4c1ce ([UPDATE_LATENCY])
+[10:46:19] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player ddea6853-eb42-3037-bc36-4950480cdd4f ([UPDATE_LATENCY])
+[10:46:23] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player ff9a681a-b444-3b47-bff6-05468fd00a54 ([UPDATE_GAME_MODE])
+[10:46:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Twerion » Usage: /friend accept <player> 
+[10:46:28] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 04d2087b-bfab-326a-bf31-27cc10da9c82 ([UPDATE_GAME_MODE])
+[10:46:33] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player c95d3155-d6b4-3f64-a354-a7119b0dbeda ([UPDATE_GAME_MODE])
+[10:46:38] [Render thread/INFO] (Minecraft) [System] [CHAT] Friends » You are now friends with karamilopro3956.
+[10:46:38] [Render thread/INFO] (Minecraft) [System] [CHAT] Friends » You have accepted 1 request(s).
+[10:46:47] [Render thread/INFO] (Minecraft) [System] [CHAT] You are already trying to connect to a server!
+[10:46:54] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: i told u i adapt
+[10:46:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:47:01] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Waiting for players...
+[10:47:01] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: it gets tougher by the match
+[10:47:15] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: you know i can also use only axe and you would be cooked?
+[10:47:16] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[10:47:16] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[10:47:16] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: mohsin
+[10:47:16] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: mushroom
+[10:47:16] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[10:47:16] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[10:47:17] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:47:17] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:47:20] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: nah
+[10:47:22] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: and pressure plates
+[10:47:29] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: ud get countered
+[10:47:39] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » mohsin was killed by nomwe67.
+[10:47:44] [Render thread/INFO] (Minecraft) [System] [CHAT] [19] Voter ┃ doblosag: rush mlg
+[10:47:45] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 524647a7-4d4c-4b77-8e62-7658fcfd3a0d ([UPDATE_HAT])
+[10:47:47] [Render thread/INFO] (Minecraft) [System] [CHAT] [1] Player ┃ nomwe67: EZ
+[10:47:49] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:48:01] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: told you
+[10:48:03] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: HUH
+[10:48:03] [Worker-Main-19/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:48:03] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 524647a7-4d4c-4b77-8e62-7658fcfd3a0d ([UPDATE_HAT])
+[10:48:04] [Worker-Main-19/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:48:08] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: i couldnt web
+[10:48:09] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Waiting for players...
+[10:48:10] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: q bw plz
+[10:48:13] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 247bd5f9-a917-3853-bce4-298cab5b485f ([UPDATE_HAT])
+[10:48:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[10:48:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[10:48:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: yuzu
+[10:48:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: desert
+[10:48:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[10:48:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[10:48:15] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:48:15] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:48:17] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: yo thats not fair
+[10:48:18] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: cause you pearled to fast
+[10:48:23] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: i tried to web and it didnt work
+[10:48:30] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » yuzu was killed by nomwe67.
+[10:48:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword Round Stats
+[10:48:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 1
+[10:48:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 1
+[10:48:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 0
+[10:48:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✔
+[10:48:47] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:48:47] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Waiting for players...
+[10:48:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: wtf
+[10:48:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[10:48:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[10:48:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: Krecake
+[10:48:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: winter
+[10:48:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[10:48:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[10:49:04] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player e9b36e8e-04c2-332c-a7b1-4065a779cb05 ([UPDATE_HAT])
+[10:49:08] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 7c95b0c0-5b41-305f-b2a6-a38a420f61d9 ([UPDATE_HAT])
+[10:49:12] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 5e02ed46-17e7-4804-b159-fddcef950057 ([UPDATE_GAME_MODE])
+[10:49:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » nomwe67 was killed by Krecake.
+[10:49:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword Round Stats
+[10:49:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 0
+[10:49:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 0
+[10:49:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 1
+[10:49:14] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✘
+[10:49:19] [Render thread/INFO] (Minecraft) [System] [CHAT] Twerion » Dieser Befehl existiert nicht!
+[10:49:22] [Worker-Main-17/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:49:23] [Worker-Main-17/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:49:28] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:49:42] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[10:49:42] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[10:49:42] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: prasanna77
+[10:49:42] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: tropical
+[10:49:42] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[10:49:42] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[10:49:43] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:49:43] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:49:44] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: gggg
+[10:49:47] [Render thread/INFO] (Minecraft) [System] [CHAT] [3] Player ┃ pwzz: gggg
+[10:49:58] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 10d1ccbb-75f0-3257-b8aa-73fd85973557 ([UPDATE_HAT])
+[10:50:00] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » prasanna77 was killed by nomwe67.
+[10:50:01] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword Round Stats
+[10:50:01] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 1
+[10:50:01] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 1
+[10:50:01] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 0
+[10:50:01] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✔
+[10:50:17] [Worker-Main-21/WARN] (Minecraft) Profile contained invalid signature for textures property (profile id: 679f5920-79d5-3269-83b9-207964279a79)
+[10:50:18] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player c8109328-0289-3895-868d-6a6abe377bf9 ([UPDATE_HAT])
+[10:50:28] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player f5be5a9b-07d1-3387-a8c2-76ce85f0ec3a ([UPDATE_HAT])
+[10:50:28] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: oof
+[10:50:29] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 04d2087b-bfab-326a-bf31-27cc10da9c82 ([UPDATE_HAT])
+[10:50:37] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: yo i cannot win man
+[10:50:44] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: i gotta win
+[10:50:44] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: i can tell you dont know the basics of axe pvp
+[10:50:50] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 12e43a61-9121-3c9e-9ff7-dca292e68082 ([UPDATE_HAT])
+[10:50:53] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: i do whydm
+[10:50:54] [Worker-Main-18/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:50:55] [Worker-Main-18/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:51:03] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: your shielding is all wrong
+[10:51:04] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 37c4fba5-7961-3285-bae3-c1d1cef5f27f ([UPDATE_GAME_MODE])
+[10:51:05] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: ?
+[10:51:06] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:51:07] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: alg !!!!!!!
+[10:51:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You left the queue.
+[10:51:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:51:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[10:51:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword 1.8
+[10:51:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: Max_779900
+[10:51:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: plains
+[10:51:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[10:51:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[10:51:09] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:51:09] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:51:14] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: lagg !!
+[10:51:22] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Max_779900 was killed by nomwe67.
+[10:51:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword 1.8 Round Stats
+[10:51:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 1
+[10:51:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 1
+[10:51:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 0
+[10:51:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✔
+[10:51:24] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: gg
+[10:51:35] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: your bullying my temu mouse ]:
+[10:51:39] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: ok so u didnt have to sweat on me and combo me to hell
+[10:51:49] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: [:
+[10:51:55] [Worker-Main-15/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:51:55] [Worker-Main-15/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:51:56] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: wait im not that good at crystalw
+[10:51:59] [Worker-Main-15/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:52:02] [Worker-Main-15/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:52:17] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:52:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Waiting for players...
+[10:52:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Unknown or incomplete command. See below for error\nSTATS<--[HERE]
+[10:52:24] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player bcb4b961-63c7-3b65-98f5-0e6b902c2dfe ([UPDATE_HAT])
+[10:52:26] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Samuel048: heker
+[10:52:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[10:52:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[10:52:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: mohsin
+[10:52:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: plains
+[10:52:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[10:52:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[10:52:26] [Render thread/INFO] (Minecraft) [System] [CHAT] [20] Lapis ┃ furiouseplayer21: rematch?
+[10:52:27] [Worker-Main-15/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:52:27] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:52:27] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:52:28] [Worker-Main-18/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:52:28] [Render thread/INFO] (Minecraft) [System] [CHAT] Vote » Many thanks to Daf4iks 3x, Waky2015 5x, OP_ARNAV_192 1x.\nVote » By voting you get 150 coins and cool Items./Vote
+[10:52:31] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 8ae9cecc-b278-3d1d-bda1-c7b8375672ec ([UPDATE_HAT])
+[10:52:38] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 247bd5f9-a917-3853-bce4-298cab5b485f ([UPDATE_HAT])
+[10:52:47] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: ggggg
+[10:52:50] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 12e43a61-9121-3c9e-9ff7-dca292e68082 ([UPDATE_HAT])
+[10:53:10] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: bruh
+[10:53:11] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: ggs
+[10:53:11] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » mohsin was killed by nomwe67.
+[10:53:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword Round Stats
+[10:53:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 1
+[10:53:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 1
+[10:53:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 0
+[10:53:12] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✔
+[10:53:16] [Worker-Main-15/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:53:17] [Worker-Main-19/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:53:19] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: this is full blast prot
+[10:53:22] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: why
+[10:53:36] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: i gotta win 1x
+[10:53:38] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: cause its crystal?
+[10:53:43] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: yea still
+[10:53:45] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: ohohoh wrong gamemodee...
+[10:54:10] [Worker-Main-20/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:54:13] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:54:15] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player fdc53124-8027-4bad-bd67-2078f4b1fc85 ([UPDATE_HAT])
+[10:54:16] [Render thread/INFO] (Minecraft) [System] [CHAT] §8┌──────────────────────────────┐\n  §0█§0█§0█§0█§0█§0█§0█§0█§r\n  §0█§0█§0█§0█§0█§0█§0█§0█§r\n  §0█§0█§7█§7█§7█§7█§0█§0█§r\n  §0█§7█§7█§7█§7█§7█§7█§0█§r  §1GrafSchreiner §7is playing on §e§lBW-Duo-7§7.\n  §7█§7█§7█§7█§7█§7█§7█§7█§r  §a§nClick to jump to the server.\n  §7█§b█§f█§7█§7█§b█§f█§7█§r\n  §7█§7█§7█§7█§7█§7█§7█§7█§r\n  §7█§7█§7█§7█§7█§7█§7█§7█§r\n§8└──────────────────────────────┘
+[10:54:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[10:54:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[10:54:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: lorth109
+[10:54:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: mesa
+[10:54:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[10:54:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[10:54:19] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:54:19] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:54:27] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: AGH
+[10:54:38] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » lorth109 was killed by nomwe67.
+[10:54:39] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword Round Stats
+[10:54:39] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 1
+[10:54:39] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 1
+[10:54:39] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 0
+[10:54:39] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✔
+[10:54:47] [Worker-Main-16/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:54:48] [Worker-Main-16/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:54:52] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: hahah
+[10:54:59] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: ahhahaahha
+[10:55:05] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: dam
+[10:55:15] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 6f518a01-a5cb-3016-9436-e461137107ce ([UPDATE_GAME_MODE])
+[10:55:22] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: gggggggg
+[10:55:33] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 894b33ea-b660-4782-880e-c85e4466b5ba ([UPDATE_HAT])
+[10:55:37] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: q bw njow
+[10:55:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:55:58] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 08a2a90f-6f20-38be-911c-9d5ec0e3884c ([UPDATE_HAT])
+[10:56:00] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[10:56:00] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[10:56:00] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: Krecake
+[10:56:00] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: mushroom
+[10:56:00] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[10:56:00] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[10:56:01] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:56:01] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:56:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » nomwe67 was killed by Krecake.
+[10:56:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword Round Stats
+[10:56:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 0
+[10:56:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 0
+[10:56:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 1
+[10:56:23] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✘
+[10:56:23] [Worker-Main-20/WARN] (Minecraft) Profile contained invalid signature for textures property (profile id: 10ca3513-e187-3099-a347-915aa4785ec0)
+[10:56:28] [Worker-Main-18/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:56:29] [Worker-Main-19/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:56:34] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:56:40] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Waiting for players...
+[10:56:44] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You left the queue.
+[10:56:45] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:56:47] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: whtf
+[10:56:57] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: ?
+[10:57:04] [Render thread/INFO] (Minecraft) [System] [CHAT] Vote » Many thanks to Daf4iks 6x, Waky2015 2x, lwkAdrit 1x.\nVote » By voting you get 150 coins and cool Items./Vote
+[10:57:10] [Render thread/INFO] (Minecraft) [System] [CHAT] [6] Player ┃ baodeptrai1908: ok
+[10:57:10] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Waiting for players...
+[10:57:14] [Render thread/INFO] (Minecraft) [System] [CHAT] [1] Player ┃ nomwe67: im top 5000 in sword here
+[10:57:15] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 04d2087b-bfab-326a-bf31-27cc10da9c82 ([UPDATE_HAT])
+[10:57:19] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player b655e0e6-a240-30b5-952e-04055e45674a ([UPDATE_GAME_MODE])
+[10:57:20] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player f4de5adb-9af3-3700-8451-cdc93832e645 ([UPDATE_HAT])
+[10:57:21] [Render thread/INFO] (Minecraft) [System] [CHAT] [14] Player ┃ Falkmane: lagg
+[10:57:22] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 90c138d9-b2ef-32e7-bc74-bbdf8640cdf5 ([UPDATE_GAME_MODE])
+[10:57:27] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: holy lag
+[10:57:34] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: breach swapping lowkey worked
+[10:57:40] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Waiting for players...
+[10:57:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[10:57:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[10:57:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: ImMupry
+[10:57:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: tower
+[10:57:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[10:57:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[10:57:45] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:57:45] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:57:58] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: i mfking lagged
+[10:58:04] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » ImMupry was killed by nomwe67.
+[10:58:04] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: samee
+[10:58:04] [Render thread/INFO] (Minecraft) [System] [CHAT]                                SUPPORT                               \n                  Need help or have a question?\n              Our team is here for you: /support\n                                                                           
+[10:58:04] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword Round Stats
+[10:58:04] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 1
+[10:58:04] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 1
+[10:58:04] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 0
+[10:58:04] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✔
+[10:58:08] [Worker-Main-16/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:58:08] [Worker-Main-20/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:58:13] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[10:58:17] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[10:58:17] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[10:58:17] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: moking123
+[10:58:17] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: winter
+[10:58:17] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[10:58:18] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[10:58:19] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:58:19] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[10:58:19] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: ???????????
+[10:58:20] [Render thread/INFO] (Minecraft) [System] [CHAT] [6] Player ┃ Prince_77: fidgt
+[10:58:20] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 8ae9cecc-b278-3d1d-bda1-c7b8375672ec ([UPDATE_HAT])
+[10:58:28] [Render thread/INFO] (Minecraft) [System] [CHAT] [13] Player ┃ Im_learning: fk off you didnt win i fking lagged
+[10:58:29] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 92f9e732-d543-3f0d-87fe-c42d62bf9dec ([UPDATE_HAT])
+[10:58:44] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 296a6c30-6fc4-3679-818b-8115dda696f4 ([UPDATE_GAME_MODE])
+[10:58:45] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » moking123 was killed by nomwe67.
+[10:58:46] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword Round Stats
+[10:58:46] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 1
+[10:58:46] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 1
+[10:58:46] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 0
+[10:58:46] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✔
+[10:58:52] [Worker-Main-15/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:58:53] [Worker-Main-15/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[10:59:14] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ zyrax: lol
+[10:59:15] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 247bd5f9-a917-3853-bce4-298cab5b485f ([UPDATE_HAT])
+[10:59:20] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: ik kan niet zo goed, alleen als ik zegmaar 0 ping heb
+[10:59:28] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 59d6a4b4-ec95-43e3-9844-14b6796147ac ([UPDATE_GAME_MODE])
+[10:59:30] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: wtf
+[10:59:30] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: want anders clickt die sloom
+[10:59:34] [Render thread/INFO] (Minecraft) [System] [CHAT] [17] Player ┃ nnx066: ehhh nederlands
+[11:00:00] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: wat
+[11:00:00] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: waarom zijn hier zoveel nederlanders
+[11:00:08] [Render thread/INFO] (Minecraft) [System] [CHAT] [12] Player ┃ Tomas_Pvp: lol
+[11:00:11] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 63ca9951-604a-315a-89da-abdb31d6db35 ([UPDATE_GAME_MODE])
+[11:00:23] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 247bd5f9-a917-3853-bce4-298cab5b485f ([UPDATE_HAT])
+[11:00:23] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ Blueberry1234: nooo
+[11:00:24] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 840d3e78-11a9-46f2-9778-4be3492e8adf ([UPDATE_GAME_MODE])
+[11:00:25] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 04d2087b-bfab-326a-bf31-27cc10da9c82 ([UPDATE_HAT])
+[11:00:27] [Render thread/INFO] (Minecraft) [System] [CHAT] [1] Player ┃ Must1fyMC: demir
+[11:00:37] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: thats tactic
+[11:00:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: ahh ggs
+[11:00:54] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ Blueberry1234: ggs setvy
+[11:01:04] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: ik kan het in andere server
+[11:01:06] [Render thread/INFO] (Minecraft) [System] [CHAT] Vote » Many thanks to Ravfen 2x, lwkAdrit 7x.\nVote » By voting you get 150 coins and cool Items./Vote
+[11:01:19] [Render thread/INFO] (Minecraft) [System] [CHAT] [29] Gold ┃ KornKrone: sorry das ist das falsche
+[11:01:23] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: hha
+[11:01:37] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ Orbytus: calm down lil bro
+[11:01:40] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ Orbytus: hack
+[11:01:45] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: werkt niet
+[11:01:50] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player f5be5a9b-07d1-3387-a8c2-76ce85f0ec3a ([UPDATE_HAT])
+[11:02:01] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 296a6c30-6fc4-3679-818b-8115dda696f4 ([UPDATE_GAME_MODE])
+[11:02:09] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: ggs
+[11:02:52] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[11:02:53] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[11:02:53] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[11:02:53] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: ImMupry
+[11:02:53] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: winter
+[11:02:53] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[11:02:54] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[11:02:55] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[11:02:55] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[11:03:02] [Render thread/INFO] (Minecraft) [System] [CHAT] [1] Player ┃ Must1fyMC: gg
+[11:03:10] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player c3f5c50a-845c-425e-a3e3-52954b41b83e ([UPDATE_GAME_MODE])
+[11:03:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » ImMupry was killed by nomwe67.
+[11:03:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword Round Stats
+[11:03:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 1
+[11:03:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 1
+[11:03:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 0
+[11:03:15] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✔
+[11:03:23] [Worker-Main-19/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[11:03:24] [Worker-Main-19/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[11:03:34] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[11:03:39] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: aura.
+[11:03:40] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Waiting for players...
+[11:03:43] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ Blueberry1234: oh
+[11:03:47] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[11:03:47] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[11:03:47] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: lorth109
+[11:03:47] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: mesa
+[11:03:47] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[11:03:47] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[11:03:52] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: \JE HEBT 50 PING
+[11:03:53] [Render thread/INFO] (Minecraft) [System] [CHAT] [1] Player ┃ nomwe67: im ht1
+[11:04:02] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: MOET IN MINDER DAN 50MS DUS IS MAAR IN 7 MS
+[11:04:07] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 37c4fba5-7961-3285-bae3-c1d1cef5f27f ([UPDATE_GAME_MODE])
+[11:04:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » lorth109 was killed by nomwe67.
+[11:04:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword Round Stats
+[11:04:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Points » 1
+[11:04:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Kills » 1
+[11:04:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Deaths » 0
+[11:04:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Win » ✔
+[11:04:10] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: ik heb 25
+[11:04:12] [Worker-Main-18/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[11:04:13] [Worker-Main-18/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[11:04:22] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[11:04:22] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 86957ca0-1334-4369-89c4-0a5de50afc92 ([UPDATE_HAT])
+[11:04:28] [Render thread/INFO] (Minecraft) [System] [CHAT] [2] Player ┃ ImMupry: ez
+[11:04:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[11:04:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[11:04:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: ImMupry
+[11:04:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: desert
+[11:04:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[11:04:31] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[11:04:33] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[11:04:33] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[11:04:36] [Render thread/INFO] (Minecraft) [System] [CHAT] [18] Player ┃ speedy_634: haha ik
+[11:04:41] [Render thread/INFO] (Minecraft) [System] [CHAT] [2] Player ┃ Sherwin_John: i dont have wind charge
+[11:04:51] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » ImMupry was killed by nomwe67.
+[11:04:51] [Render thread/INFO] (Minecraft) [System] [CHAT] §6§lTwerion §8§l» §7You have been kicked from §6Practice-1§7 §8§l» §cgrim-17
+[11:04:54] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 0cb18699-56cc-3fb8-b8e2-66ea9f854a03 ([UPDATE_GAME_MODE])
+[11:04:56] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 9a8d383f-e6ef-46c3-94ea-e1b7e2cc747a ([UPDATE_GAME_MODE])
+[11:04:57] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 1e6394a9-d6bf-35d2-83fc-5ea04e1e7199 ([UPDATE_GAME_MODE])
+[11:04:59] [Worker-Main-19/WARN] (Minecraft) Profile contained invalid signature for textures property (profile id: 679f5920-79d5-3269-83b9-207964279a79)
+[11:05:03] [Worker-Main-20/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[11:05:03] [Worker-Main-21/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[11:05:09] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[11:05:09] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Waiting for players...
+[11:05:21] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You left the queue.
+[11:05:22] [Render thread/INFO] (Minecraft) [System] [CHAT] [29] Gold ┃ KornKrone: ey
+[11:05:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » You joined the queue. (Unranked)
+[11:05:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » A free arena was found for you.
+[11:05:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » Only Sword
+[11:05:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Opponent: ewa32a
+[11:05:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Arena: mesa
+[11:05:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Ranked: ✘
+[11:05:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » The match was started.
+[11:05:27] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[11:05:27] [Render thread/WARN] (Minecraft) Received passengers for unknown entity
+[11:05:28] [Render thread/INFO] (Minecraft) [System] [CHAT] [4] Player ┃ WaterFragmenten: je shield breet niet
+[11:05:59] [Render thread/INFO] (Minecraft) [System] [CHAT] Practice » ewa32a was killed by nomwe67.
+[11:06:00] [Render thread/WARN] (Minecraft) Ignoring player info update for unknown player 692c54ba-4f03-4624-8816-dc39cc24f481 ([UPDATE_HAT])
+[11:06:03] [Worker-Main-21/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[11:06:04] [Worker-Main-15/ERROR] (Minecraft) Could not decode textures payload
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:521)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1358)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1259)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1169)
+	at knot//com.google.gson.Gson.fromJson(Gson.java:1106)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.unpackTextures(YggdrasilMinecraftSessionService.java:133)
+	at knot//net.minecraft.client.texture.PlayerSkinProvider$1.method_54647(PlayerSkinProvider.java:60)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1781)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:511)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1450)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2019)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at knot//com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at knot//com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at knot//com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:510)
+	... 12 more
+[11:06:12] [Render thread/ERROR] (Minecraft) Can't ping top.chickencraft.nl: Internal Exception: io.netty.channel.unix.Errors$NativeIoException: readAddress(..) failed with error(-54): Connection reset by peer
+[11:06:27] [Render thread/INFO] (Minecraft) Connecting to 2p2t.org, 25565
+[11:06:27] [Download-30/ERROR] (Minecraft) Failed to retrieve profile key pair
+com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 401
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:103)
+	at knot//com.mojang.authlib.minecraft.client.MinecraftClient.post(MinecraftClient.java:64)
+	at knot//com.mojang.authlib.yggdrasil.YggdrasilUserApiService.getKeyPair(YggdrasilUserApiService.java:61)
+	at knot//net.minecraft.client.session.ProfileKeysImpl.fetchKeyPair(ProfileKeysImpl.java:128)
+	at knot//net.minecraft.client.session.ProfileKeysImpl.method_44291(ProfileKeysImpl.java:77)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1789)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+[11:06:28] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] Welcome! This server requires an account. Use /register <password> <password> or /login <password>
+[11:06:28] [Render thread/INFO] (Minecraft) [System] [CHAT] nomwe67 joined the game
+[11:06:40] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] Account registered! You can now log in with /login <password>
+[11:06:40] [Render thread/INFO] (Minecraft) [System] [CHAT] §8[§92p§72t§8] §r§7Enable auto-login so you skip §f/login §7next time? [Yes]  [No]
+[11:06:45] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] Auto-login enabled for this account on this IP. You'll skip /login next time.
+[11:06:47] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] Taking you to 2p2t...
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  metal_sonic_1993 → hi 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !top !onlinetop 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !kd <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !gemini ask me something 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !rd !rk !ld !lk !fd !fk 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !om <player> <msg> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !blackjack !roulette 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (2) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !ud !wa 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > how much of a nolife? !nolife <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !om <player> <msg> leave them mail. 6 max 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (5) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !newplayers 30d ago 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !mount / !dismount 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > get close and !fight 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !mimic !spin !follow !dance 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  Ronsv1924 → cука блять 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !pirate <query> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (11) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  Ronsv1924 → !сука блять 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !tor <query> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !report <player> | !rules 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !hitman <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !nuke <place> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (12) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  Ronsv1924 → сука блять 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (15) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !quote <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !firstwords / !lastwords 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !joins / !quits 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !lastseen / !firstseen <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !ping !bestping !worstping 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !clout <word> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !top !onlinetop 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !playtime <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (16) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (20) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !kd <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !gemini ask me something 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  Unendless → meow 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  Unendless → meow 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  Unendless → meow 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !rd !rk !ld !lk !fd !fk 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !om <player> <msg> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (22) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !blackjack !roulette 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !ud !wa 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > how much of a nolife? !nolife <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !om <player> <msg> leave them mail. 6 max 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (23) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !newplayers 30d ago 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !mount / !dismount 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  sasredsoso989 → hello 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > get close and !fight 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (25) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !mimic !spin !follow !dance 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (27) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !pirate <query> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !tor <query> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !report <player> | !rules 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !hitman <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (29) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !nuke <place> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !quote <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !firstwords / !lastwords 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [Discord] | Server Booster Marsh → Gay
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (30) 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !joins / !quits 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !lastseen / !firstseen <player> 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !ping !bestping !worstping 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  K4iroNx_YT → can anyone give me some loot 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  K4iroNx_YT → please 
+[11:06:50] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !clout <word> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !top !onlinetop 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !playtime <player> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !kd <player> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !gemini ask me something 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !rd !rk !ld !lk !fd !fk 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (32) 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !om <player> <msg> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !blackjack !roulette 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !ud !wa 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > how much of a nolife? !nolife <player> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (34) 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !om <player> <msg> leave them mail. 6 max 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !newplayers 30d ago 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !mount / !dismount 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > get close and !fight 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !mimic !spin !follow !dance 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !pirate <query> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !tor <query> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !report <player> | !rules 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !hitman <player> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !nuke <place> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !quote <player> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !firstwords / !lastwords 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !joins / !quits 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !lastseen / !firstseen <player> 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → the spear is actually so ass 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !ping !bestping !worstping 
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> Vote for [2p2t] at https://2p2t.org/vote
+[11:06:51] [Render thread/INFO] (Minecraft) Loaded 2 advancements
+[11:06:51] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/156391, l='ClientLevel', x=-327.88, y=36.18, z=-112.18] does not have attribute minecraft:entity_interaction_range
+[11:06:51] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/156391, l='ClientLevel', x=-327.88, y=36.18, z=-112.18] does not have attribute minecraft:entity_interaction_range
+[11:06:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> No personal pack — loading the default radio pack.
+[11:06:52] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/156396, l='ClientLevel', x=-335.31, y=49.02, z=-115.39] does not have attribute minecraft:entity_interaction_range
+[11:07:00] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/156375, l='ClientLevel', x=-346.43, y=74.33, z=-110.86] does not have attribute minecraft:entity_interaction_range
+[11:07:01] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/156377, l='ClientLevel', x=-330.43, y=41.84, z=-97.31] does not have attribute minecraft:entity_interaction_range
+[11:07:04] [Render thread/WARN] (Minecraft) Entity CreeperEntity['Creeper'/156371, l='ClientLevel', x=-341.70, y=70.00, z=-129.24] does not have attribute minecraft:entity_interaction_range
+[11:07:06] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/156334, l='ClientLevel', x=-354.75, y=67.93, z=-101.48] does not have attribute minecraft:entity_interaction_range
+[11:07:13] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/156376, l='ClientLevel', x=-350.53, y=52.95, z=-103.48] does not have attribute minecraft:entity_interaction_range
+[11:07:22] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → yo come 
+[11:07:27] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > saving that food for later (37) 
+[11:07:31] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → ima test ts 
+[11:07:33] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/157098, l='ClientLevel', x=-360.46, y=55.07, z=-94.25] does not have attribute minecraft:entity_interaction_range
+[11:07:35] [Render thread/INFO] (Minecraft) Loaded 13 advancements
+[11:07:43] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  albertopigeon → it doesnt work 
+[11:07:49] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → aw 
+[11:08:00] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> ▲ Player hppt2 Joined for the first time.
+[11:08:04] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → msiclcick 
+[11:08:05] [Render thread/INFO] (Minecraft) [System] [CHAT] hppt2 got shot by a skeleton
+[11:08:10] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> Type /voice and click the link to connect to and use voice chat. No mod required!
+[11:08:22] [Render thread/WARN] (Minecraft) Entity TropicalFishEntity['Tropical Fish'/158602, l='ClientLevel', x=-243.52, y=6.73, z=-1.44] does not have attribute minecraft:entity_interaction_range
+[11:08:22] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → mi lagigng 
+[11:08:33] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> You have killed yourself!
+[11:08:41] [Render thread/INFO] (Minecraft) [System] [CHAT] hppt2 decided to test gravity and lost
+[11:08:44] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → brute splitter 
+[11:08:56] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> KVESR is now AFK.
+[11:09:02] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !clout <word> 
+[11:09:10] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → borbo do u like my trims 
+[11:09:21] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  albertopigeon → looks like vomit lowk 
+[11:09:22] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → its like bedrock 
+[11:09:31] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  albertopigeon → obsidian armor 
+[11:09:31] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/160672, l='ClientLevel', x=-62.24, y=-23.60, z=-441.63] does not have attribute minecraft:entity_interaction_range
+[11:09:33] [Render thread/WARN] (Minecraft) Entity GlowSquidEntity['Glow Squid'/160717, l='ClientLevel', x=-25.13, y=-13.24, z=-473.79] does not have attribute minecraft:entity_interaction_range
+[11:09:37] [Render thread/WARN] (Minecraft) Entity GlowSquidEntity['Glow Squid'/160976, l='ClientLevel', x=-31.40, y=-21.89, z=-466.60] does not have attribute minecraft:entity_interaction_range
+[11:09:37] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/160670, l='ClientLevel', x=-48.69, y=-1.82, z=-491.71] does not have attribute minecraft:entity_interaction_range
+[11:09:40] [Render thread/WARN] (Minecraft) Entity GlowSquidEntity['Glow Squid'/161074, l='ClientLevel', x=-66.19, y=5.02, z=-570.40] does not have attribute minecraft:entity_interaction_range
+[11:09:40] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> Help maintain server costs by donating at https://2p2t.org/donate
+[11:09:41] [Render thread/WARN] (Minecraft) Entity GlowSquidEntity['Glow Squid'/160988, l='ClientLevel', x=-43.33, y=-14.43, z=-458.67] does not have attribute minecraft:entity_interaction_range
+[11:09:41] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → MY LAG NGR 
+[11:09:45] [Render thread/WARN] (Minecraft) Entity GlowSquidEntity['Glow Squid'/161091, l='ClientLevel', x=-49.04, y=19.06, z=-535.78] does not have attribute minecraft:entity_interaction_range
+[11:09:45] [Render thread/WARN] (Minecraft) Entity CreeperEntity['Creeper'/161120, l='ClientLevel', x=-6.70, y=-12.91, z=-591.08] does not have attribute minecraft:entity_interaction_range
+[11:09:46] [Render thread/WARN] (Minecraft) Entity CreeperEntity['Creeper'/160659, l='ClientLevel', x=-44.51, y=-14.72, z=-466.39] does not have attribute minecraft:entity_interaction_range
+[11:09:51] [Render thread/WARN] (Minecraft) Entity BatEntity['Bat'/161228, l='ClientLevel', x=-33.44, y=-17.44, z=-612.39] does not have attribute minecraft:entity_interaction_range
+[11:10:06] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → ok mb 
+[11:10:25] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → ngr wars 
+[11:10:28] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  albertopigeon → lmao 
+[11:10:31] [Render thread/WARN] (Minecraft) Unable to play empty soundEvent: minecraft:entity.cod.ambient
+[11:10:32] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  hppt2 → hi 
+[11:10:44] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  nomwe67 → hi nigger 
+[11:10:46] [Render thread/WARN] (Minecraft) Entity CodEntity['Cod'/162572, l='ClientLevel', x=-24.67, y=54.49, z=-1058.29] does not have attribute minecraft:entity_interaction_range
+[11:10:51] [Render thread/WARN] (Minecraft) Entity CodEntity['Cod'/162634, l='ClientLevel', x=-14.37, y=66.02, z=-1090.50] does not have attribute minecraft:entity_interaction_range
+[11:10:53] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  nomwe67 → nah im just kidding 
+[11:10:57] [Render thread/WARN] (Minecraft) Entity CodEntity['Cod'/162996, l='ClientLevel', x=-16.55, y=64.23, z=-1187.50] does not have attribute minecraft:entity_interaction_range
+[11:10:58] [Render thread/WARN] (Minecraft) Entity CodEntity['Cod'/162633, l='ClientLevel', x=5.45, y=62.16, z=-1106.13] does not have attribute minecraft:entity_interaction_range
+[11:11:06] [Render thread/WARN] (Minecraft) Entity CodEntity['Cod'/163399, l='ClientLevel', x=-8.57, y=61.15, z=-1193.43] does not have attribute minecraft:entity_interaction_range
+[11:11:07] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → Alperte 
+[11:11:09] [Render thread/WARN] (Minecraft) Entity CodEntity['Cod'/163452, l='ClientLevel', x=-11.50, y=54.96, z=-1300.05] does not have attribute minecraft:entity_interaction_range
+[11:11:10] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> Donate to support 2p2t at https://2p2t.org/shop
+[11:11:11] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  albertopigeon → what 
+[11:11:11] [Render thread/WARN] (Minecraft) Entity CodEntity['Cod'/163555, l='ClientLevel', x=-9.29, y=51.10, z=-1296.29] does not have attribute minecraft:entity_interaction_range
+[11:11:32] [Render thread/INFO] (Minecraft) [System] [CHAT] nomwe67 got the wither disease
+[11:11:45] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → im bored 
+[11:11:46] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> You have killed yourself!
+[11:11:48] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> ▼ Player hppt2 Left.
+[11:11:52] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → ima destroy all my illeagsl 
+[11:11:59] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → where did u even go 
+[11:12:00] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> You have killed yourself!
+[11:12:04] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  albertopigeon → idk 
+[11:12:08] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → ima drop it in the void 
+[11:12:10] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  albertopigeon → can i see how u destroy 
+[11:12:11] [Render thread/INFO] (Minecraft) [System] [CHAT] DisserCord tried to defuse a Creeper... it didn't work
+[11:12:13] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → i need echest 
+[11:12:14] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> DisserCord is no longer AFK.
+[11:12:19] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → i dont have silk 
+[11:12:26] [Render thread/INFO] (Minecraft) [System] [CHAT] [2ᴘ2ᴛ]  nomwe67 → walking at 28 m/s 
+[11:12:40] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> Help maintain server costs by donating at https://2p2t.org/donate
+[11:12:46] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → its all in 1 shulk 
+[11:12:54] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → i knew it 
+[11:13:00] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → it was a pearl shu8lker u dumbo 
+[11:13:03] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  albertopigeon → didnt talke 
+[11:13:05] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> You have killed yourself!
+[11:13:05] [Render thread/INFO] (Minecraft) [System] [CHAT] nomwe67 decided to test gravity and lost
+[11:13:21] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → wemmbu is a ngr 
+[11:13:23] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  notmooomooo → > !top !onlinetop 
+[11:13:27] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → nice 
+[11:13:35] [Render thread/INFO] (Minecraft) [System] [CHAT] [2p2t] >> You have killed yourself!
+[11:13:35] [Render thread/INFO] (Minecraft) [System] [CHAT] nomwe67 decided to test gravity and lost
+[11:13:39] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → i wont hit back 
+[11:13:45] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  Regusons → Peace 
+[11:13:48] [Render thread/INFO] (Minecraft) [System] [CHAT] [ᴠᴏᴛᴇʀ]  albertopigeon → yea 
+[11:14:02] [Render thread/INFO] (Minecraft) Stopping!

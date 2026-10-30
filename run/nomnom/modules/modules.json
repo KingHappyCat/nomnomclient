@@ -41,15 +41,15 @@
     "PopDelay": "10",
     "PingComp": "true",
     "Debug": "false",
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
   "Speed": {
-    "Mode": "STRAFE",
-    "Speed": "2.83",
+    "Mode": "BHOP",
+    "Speed": "5.0",
     "Ground Check": "true",
-    "Enabled": "false",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
@@ -68,7 +68,7 @@
   },
   "Step": {
     "Height": "3.3",
-    "Enabled": "false",
+    "Enabled": "true",
     "Drawn": "true",
     "Bind": -1
   },
@@ -108,21 +108,21 @@
   },
   "AutoTotem": {
     "Health": "20.0",
-    "Delay": "1",
-    "Enabled": "true",
+    "Delay": "7",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
   "KillAura": {
-    "Range": "6.0",
+    "Range": "3.0",
     "Players": "true",
-    "Hostiles": "true",
+    "Hostiles": "false",
     "Passives": "false",
-    "Rotate": "false",
+    "Rotate": "true",
     "Cooldown": "true",
     "Enabled": "false",
     "Drawn": "true",
-    "Bind": -1
+    "Bind": 90
   },
   "FastPlace": {
     "Delay": "0",
@@ -142,7 +142,7 @@
     "Passives": "false",
     "Fill": "true",
     "Range": "256",
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
@@ -174,7 +174,7 @@
     "Look Vertical": "false",
     "Auto Takeoff": "true",
     "Anti Kinetic": "true",
-    "Enabled": "true",
+    "Enabled": "false",
     "Drawn": "true",
     "Bind": -1
   },
@@ -186,7 +186,7 @@
     "Speed": "true",
     "Ping": "true",
     "FPS": "true",
-    "Totems and Crystals": "false",
+    "Totems and Crystals": "true",
     "Rainbow": "true",
     "CustomFont": "true",
     "Enabled": "true",
@@ -218,6 +218,61 @@
     "RequireBase": "true",
     "MinDistance": "2.5",
     "Debug": "false",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "Criticals": {
+    "Mode": "STRICT",
+    "OnlyOnGround": "true",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "NoSlow": {
+    "Items": "true",
+    "Enabled": "true",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "AutoEat": {
+    "Hunger": "14",
+    "Gapples": "false",
+    "SwitchBack": "true",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "AutoWalk": {
+    "Sprint": "true",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "AutoLog": {
+    "Health": "6.0",
+    "MinTotems": "0",
+    "TotemSafe": "false",
+    "Players": "false",
+    "Range": "16.0",
+    "DisableReconnect": "true",
+    "DisableSelf": "true",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "FakePlayer": {
+    "Name": "Nomnom",
+    "Health": "4.4",
+    "CopyGear": "false",
+    "Enabled": "false",
+    "Drawn": "true",
+    "Bind": -1
+  },
+  "AutoXP": {
+    "Repair": "100",
+    "Delay": "2",
+    "OnlyOnGround": "true",
     "Enabled": "false",
     "Drawn": "true",
     "Bind": -1

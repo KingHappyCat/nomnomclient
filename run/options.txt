@@ -51,7 +51,7 @@ directionalAudio:false
 touchscreen:false
 bobView:true
 toggleCrouch:true
-toggleSprint:false
+toggleSprint:true
 toggleAttack:false
 toggleUse:false
 sprintWindow:7
